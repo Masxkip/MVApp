@@ -1,0 +1,68 @@
+const reviews = [
+  {
+    id: 1,
+    platform: "google",
+    rating: 5,
+    text: "From start to finish my move was a great experience. I immediately got a quote. The scheduling was easy, and they provided me with information regarding insurance coverage. The move itself went like clockwork. The movers arrived on time and moved everything quickly and safely.",
+    author: "Russell Gon",
+    location: "New York",
+  },
+  {
+    id: 2,
+    platform: "yelp",
+    rating: 5,
+    text: "Piece of Cake Movers moved me from the Financial District to the Hudson Valley. It was absolutely flawless. The team was polite, careful, efficient and knowledgeable. No hidden charges, no surprises.",
+    author: "James B.",
+    location: "New York",
+  },
+  {
+    id: 3,
+    platform: "google",
+    rating: 5,
+    text: "Excellent service! Our team packed up quickly and efficiently. They were also very nice and respectful. I did not get any last minute charges. Nothing broke during the move. I would highly recommend using this company.",
+    author: "Erica Davis",
+    location: "New York to North Carolina",
+  },
+  {
+    id: 4,
+    platform: "yelp",
+    rating: 5,
+    text: "I've moved countless times in my life, and I've never had such a painless experience with movers. They were organized ahead of time, double and triple checking inventory. There were no price surprises on move day.",
+    author: "Joseph C.",
+    location: "NYC to Baltimore",
+  },
+  {
+    id: 5,
+    platform: "google",
+    rating: 5,
+    text: "Fast, careful, and professional. The booking process was smooth and the movers handled everything with care. Definitely one of the easiest moving experiences I’ve had.",
+    author: "Amanda R.",
+    location: "Brooklyn",
+  },
+  {
+    id: 6,
+    platform: "yelp",
+    rating: 5,
+    text: "They showed up on time, wrapped everything properly, and moved us without any damage. Great communication from start to finish.",
+    author: "Daniel T.",
+    location: "Queens",
+  },
+  {
+    id: 7,
+    platform: "google",
+    rating: 5,
+    text: "Professional team and very fair pricing. The movers were efficient, respectful, and made a stressful move much easier.",
+    author: "Sophia L.",
+    location: "Manhattan",
+  },
+  {
+    id: 8,
+    platform: "yelp",
+    rating: 5,
+    text: "Fantastic service. Everything was well organized and the entire move felt much less stressful than expected.",
+    author: "Michael P.",
+    location: "Bronx",
+  },
+];
+
+export default reviews;
