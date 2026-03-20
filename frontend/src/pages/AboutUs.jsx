@@ -3,8 +3,7 @@ import React from "react";
 import storyImg from "../assets/c.png";
 import whoWeAreImg from "../assets/c.png";
 
-const brandOrange = "#f75a05";
-const brandBlack = "#050504";
+
 
 export default function AboutUs() {
   const differencePoints = [
@@ -154,14 +153,14 @@ function DualTextSection({
             <div>
               <h2
                 className="text-[2.03rem] font-extrabold leading-[1.05] md:text-[3.3rem]"
-                style={{ color: "#1c2470" }}
+                style={{ color: "black" }}
               >
                 {leftTitle}
               </h2>
 
               <p
                 className="mt-5 text-[1.09rem] leading-[1.8] md:mt-7 md:text-[1.1rem]"
-                style={{ color: "#1c2470" }}
+                style={{ color: "black" }}
               >
                 {leftBody}
               </p>
@@ -170,14 +169,14 @@ function DualTextSection({
             <div>
               <h2
                 className="text-[2.03rem] font-extrabold leading-[1.05] md:text-[3.3rem]"
-                style={{ color: "#1c2470" }}
+                style={{ color: "black" }}
               >
                 {rightTitle}
               </h2>
 
               <p
                 className="mt-5 text-[1.09rem] leading-[1.8] md:mt-7 md:text-[1.1rem]"
-                style={{ color: "#1c2470" }}
+                style={{ color: "black" }}
               >
                 {rightBody}
               </p>
@@ -201,7 +200,7 @@ function DifferenceListSection({ title, items = [] }) {
           <div className="max-w-6xl">
             <h2
               className="max-w-5xl text-[2.03rem] font-extrabold leading-[1.08] md:text-[3.3rem]"
-              style={{ color: brandOrange }}
+              style={{ color: "black" }}
             >
               {title}
             </h2>
@@ -235,7 +234,7 @@ function DifferenceItem({ text }) {
 
       <p
         className="text-[1.09rem] leading-[1.7] md:text-[1.1rem]"
-        style={{ color: "#1c2470" }}
+        style={{ color: "black" }}
       >
         {text}
       </p>

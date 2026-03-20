@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
                     href="https://www.ozmoving.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="underline decoration-2 underline-offset-4"
+                    className="underline decoration-2 underline-offset-4 text-[#f75a05]"
                   >
                     www.ozmoving.com
                   </a>
@@ -91,8 +91,8 @@ export default function PrivacyPolicyPage() {
                     "Express any concern you have about our use of your data.",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-4">
-                      <span className="mt-[0.2rem] inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f2d437]">
-                        <CheckIcon className="h-3.5 w-3.5 text-black" />
+                      <span className="mt-[0.2rem] inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f75a05]">
+                        <CheckIcon className="h-3.5 w-3.5 text-white" />
                       </span>
                       <p className="text-[1.09rem] leading-[1.8] text-black md:text-[1.1rem]">
                         {item}
@@ -152,14 +152,14 @@ export default function PrivacyPolicyPage() {
                   you should contact us immediately via telephone at{" "}
                   <a
                     href="tel:2128762550"
-                    className="underline decoration-2 underline-offset-4"
+                    className="underline decoration-2 underline-offset-4 text-[#f75a05]"
                   >
                     212-876-2550
                   </a>{" "}
                   or via email, at{" "}
                   <a
                     href="mailto:info@ozmoving.com"
-                    className="underline decoration-2 underline-offset-4"
+                    className="underline decoration-2 underline-offset-4 text-[#f75a05]"
                   >
                     info@ozmoving.com
                   </a>

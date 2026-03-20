@@ -12,7 +12,7 @@ export default function GetQuoteCta({
 }) {
   return (
     <section className={`w-full ${bgClass}`}>
-      <div className="mx-auto w-full max-w-6xl px-4 py-10 md:px-7 md:py-13">
+      <div className="mx-auto w-full max-w-6xl px-4 py-8 md:px-23 md:py-11">
         {/* CHANGED: md:gap-4 -> md:gap-3 (moves button closer on desktop) */}
         <div className="mx-auto flex w-full flex-col items-center gap-6 md:w-fit md:flex-row md:items-center md:gap-0">
           <h2 className="text-center font-brand font-extrabold uppercase leading-[0.95] tracking-wide text-white md:text-left">
@@ -27,12 +27,12 @@ export default function GetQuoteCta({
           </h2>
 
           {/* Kept: your placement rules */}
-          <div className="shrink-0 -mt-0 md:-mt-8">
+          <div className="shrink-0 -mt-0 md:-mt-10">
             <NavLink
               to={to}
               // CHANGED: swapped CTA link styling to match your other button
               className={[
-                "rounded-xl bg-[#050504] px-8 py-4 text-center font-brand text-[1.15rem]  uppercase text-white",
+                "rounded-xl bg-[#050504] px-4 py-4 text-center font-brand text-[1rem]  uppercase text-white",
                 "transition-transform duration-150 hover:scale-[1.01] hover:bg-[white] hover:text-black",
                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
                 "active:scale-[0.99]",

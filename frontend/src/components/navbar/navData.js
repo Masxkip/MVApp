@@ -3,62 +3,66 @@
 // Make hrefs unique. Keep cities as real slugs.
 // ================================================
 export const navData = [
-  {
+   
+
+   {
     id: 1,
     label: "Moving",
-    href: "/moving",
+    href: "moving/:moveSlug",
     children: [
-      { id: "moving-local", label: "Local Moving", href: "/moving/local" },
-      {
-        id: "moving-long-distance",
-        label: "Long Distance Moving",
-        href: "/moving/long-distance",
-      },
+      { id: "moving-commercial", label: "commercial", href: "/moving/movecommercial" },
+      { id: "moving-long-distance", label: "Long Distance Moving", href: "/moving/movecommercial"},
       { id: "moving-packing", label: "Packing Services", href: "/moving/packing" },
+      { id: "moving-packing", label: "Packing Services", href: "/moving/packing" },
+      { id: "moving-packing", label: "Packing Services", href: "/moving/packing" },
+      { id: "moving-packing", label: "Packing Services", href: "/moving/packing" },
+      { id: "moving-packing", label: "Packing Services", href: "/moving/packing" },
+      { id: "moving-packing", label: "Packing Services", href: "/moving/packing" },
+      { id: "moving-packing", label: "Packing Services", href: "/moving/packing" },
+      { id: "moving-packing", label: "Packing Services", href: "/moving/packing" },
+      { id: "moving-packing", label: "Packing Services", href: "/moving/packing" },
+      
     ],
   },
+
   {
     id: 2,
     label: "Moving Location",
-    href: "/moving-location",
+    href: "moving-location/:citySlug",
     children: [
-      { id: "loc-vancouver", label: "Vancouver", href: "/moving-location/vancouver" },
+      { id: "loc-vancouver", label: "Vancouver", href: "/moving-location/alamo-heights" },
       { id: "loc-burnaby", label: "Burnaby", href: "/moving-location/burnaby" },
+      { id: "loc-richmond", label: "Richmond", href: "/moving-location/richmond" },
+      { id: "loc-richmond", label: "Richmond", href: "/moving-location/richmond" },
+      { id: "loc-richmond", label: "Richmond", href: "/moving-location/richmond" },
+      { id: "loc-richmond", label: "Richmond", href: "/moving-location/richmond" },
+      { id: "loc-richmond", label: "Richmond", href: "/moving-location/richmond" },
+      { id: "loc-richmond", label: "Richmond", href: "/moving-location/richmond" },
+      { id: "loc-richmond", label: "Richmond", href: "/moving-location/richmond" },
       { id: "loc-richmond", label: "Richmond", href: "/moving-location/richmond" },
       { id: "loc-richmond", label: "Surrey", href: "/moving-location/surrey" }
     ],
   },
+
   {
     id: 3,
-    label: "Company",
-    href: "/company",
+    label: "Services",
+    href: "services-offer/:serviceSlug",
     children: [
-      { id: "company-about", label: "About Us", href: "about" },
-      { id: "company-faqs", label: "FAQs", href: "faqs" },
-      { id: "company-contact", label: "Contact Us", href: "/contact" },
-      { id: "company-privacy", label: "Privacy Policy", href: "/company/privacy" },
-      { id: "company-reviews", label: "Reviews", href: "/company/reviews" },
+        { id: "packing", label: "Packing", href: "/services-offer/packing", },
+        { id: "services-storage-short", label: "Short Term Storage", href: "/services/storage/short-term", },
+        { id: "services-storage-short", label: "Short Term Storage", href: "/services/storage/short-term", },
+        { id: "services-storage-short", label: "Short Term Storage", href: "/services/storage/short-term", },
+        { id: "services-storage-short", label: "Short Term Storage", href: "/services/storage/short-term", },
+        { id: "services-storage-short", label: "Short Term Storage", href: "/services/storage/short-term", },
+        { id: "services-storage-short", label: "Short Term Storage", href: "/services/storage/short-term", },
+        { id: "services-storage-short", label: "Short Term Storage", href: "/services/storage/short-term", },
+        { id: "services-storage-short", label: "Short Term Storage", href: "/services/storage/short-term", },
     ],
   },
+
   {
     id: 4,
-    label: "Services",
-    href: "/services",
-    children: [
-      {
-        id: "services-storage-short",
-        label: "Short Term Storage",
-        href: "/services/storage/short-term",
-      },
-      {
-        id: "services-storage-long",
-        label: "Long Term Storage",
-        href: "/services/storage/long-term",
-      },
-    ],
-  },
-  {
-    id: 5,
     label: "Resources",
     href: "/resources",
     children: [
@@ -70,5 +74,20 @@ export const navData = [
       { id: "resources-blogs", label: "Blogs", href: "/resources/blogs" },
     ],
   },
+
+  {
+    id: 5,
+    label: "Company",
+    href: "/company",
+    children: [
+      { id: "company-about", label: "About Us", href: "about" },
+      { id: "company-faqs", label: "FAQs", href: "faqs" },
+      { id: "company-contact", label: "Contact Us", href: "/contact" },
+      { id: "company-privacy", label: "Privacy Policy", href: "/company/privacy" },
+      { id: "company-reviews", label: "Reviews", href: "/company/reviews" },
+    ],
+  },
+
+  
 ];
 

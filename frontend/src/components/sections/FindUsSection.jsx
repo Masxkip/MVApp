@@ -6,11 +6,11 @@ export default function FindUsSection({
   eyebrow = "Serving Texas Statewide",
   title = "Find Us in Your City",
   items = defaultCities,
-  backgroundClass = "bg-[#eef0f6]",
+  backgroundClass = "bg-[#f3f3f3]",
   cardBgClass = "bg-white",
   pillBgClass = "bg-black",
   pillTextClass = "text-white",
-  titleColor = "#2f3f97",
+  titleColor = "black",
   iconColor = "#f75a05",
 }) {
   return (
@@ -116,7 +116,7 @@ const defaultCities = [
   { label: "Converse", to: "/locations/converse" },
   { label: "Alamo Heights", to: "/locations/alamo-heights" },
   { label: "Shavano Park", to: "/locations/shavano-park" },
-  { label: "Timberwood Park", to: "/locations/timberwood-park" },
+  { label: "Timberwood", to: "/locations/timberwood-park" },
   { label: "Downtown", to: "/locations/downtown-san-antonio" },
   { label: "Dominion", to: "/locations/dominion" },
   { label: "Stone Oak", to: "/locations/stone-oak" },

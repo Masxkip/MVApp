@@ -10,7 +10,7 @@ export default function WebAccess() {
             <div className="max-w-7xl space-y-8 md:space-y-10">
               <p
                 className="text-[1.09rem] leading-[1.8] md:text-[1.1rem]"
-                style={{ color: "#1c2470" }}
+                style={{ color: "black" }}
               >
                 Piece of Cake Moving & Storage LLC Website Accessibility Policy,{" "}
                 <span className="font-extrabold">
@@ -20,7 +20,7 @@ export default function WebAccess() {
 
               <p
                 className="text-[1.09rem] leading-[1.8] md:text-[1.1rem]"
-                style={{ color: "#1c2470" }}
+                style={{ color: "black" }}
               >
                 We strive to provide an excellent online experience for all
                 visitors to Piece of Cake Moving & Storage website.
@@ -28,7 +28,7 @@ export default function WebAccess() {
 
               <p
                 className="text-[1.09rem] leading-[1.8] md:text-[1.1rem]"
-                style={{ color: "#1c2470" }}
+                style={{ color: "black" }}
               >
                 We believe all of our visitors should be able to easily use our
                 website, regardless of whether the visitor has a need for
@@ -38,7 +38,7 @@ export default function WebAccess() {
 
               <p
                 className="text-[1.09rem] leading-[1.8] md:text-[1.1rem]"
-                style={{ color: "#1c2470" }}
+                style={{ color: "black" }}
               >
                 To ensure access, we are committed to maintaining compliance
                 with the Level AA success criteria of the Website Content
@@ -47,10 +47,10 @@ export default function WebAccess() {
 
               <ul className="space-y-4 pl-6 md:space-y-5">
                 <li className="text-[1.09rem] leading-[1.8] md:text-[1.1rem]">
-                  <span className="mr-3 text-[1.35rem] leading-none text-[#ff4aa2]">
+                  <span className="mr-3 text-[1.35rem] leading-none text-[#f75a05]">
                     •
                   </span>
-                  <span style={{ color: "#1c2470" }}>
+                  <span style={{ color: "black" }}>
                     The Web Content Accessibility Guidelines (WCAG 2.0) Level AA
                     are recognized and acknowledged as the international
                     standard measure of success. Piece of Cake Moving & Storage
@@ -59,10 +59,10 @@ export default function WebAccess() {
                 </li>
 
                 <li className="text-[1.09rem] leading-[1.8] md:text-[1.1rem]">
-                  <span className="mr-3 text-[1.35rem] leading-none text-[#ff4aa2]">
+                  <span className="mr-3 text-[1.35rem] leading-none text-[#f75a05]">
                     •
                   </span>
-                  <span style={{ color: "#1c2470" }}>
+                  <span style={{ color: "black" }}>
                     We test our website on a regular basis in order to ensure
                     that we meet or exceed the AA standard and that it is usable
                     by guests who use assistive technology.
@@ -72,14 +72,14 @@ export default function WebAccess() {
 
               <p
                 className="text-[1.09rem] leading-[1.8] md:text-[1.1rem]"
-                style={{ color: "#1c2470" }}
+                style={{ color: "black" }}
               >
                 If you have questions or would like to report an issue related
                 to the accessibility of our website, please email us at{" "}
                 <a
                   href="mailto:pr@mypieceofcakemove.com"
                   className="font-bold underline decoration-2 underline-offset-4"
-                  style={{ color: "#ff4aa2" }}
+                  style={{ color: "#f75a05" }}
                 >
                   pr@mypieceofcakemove.com
                 </a>

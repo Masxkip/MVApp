@@ -47,7 +47,7 @@ export default function FAQSection({
   const resolvedFaqs = faqs?.length ? faqs : defaultFaqs;
 
   return (
-    <section className={isDark ? "w-full bg-white font-brand" : "w-full bg-white font-brand"}>
+    <section className={isDark ? "w-full bg-white font-brand" : "w-full bg-[#f3f3f3] font-brand"}>
       <div className="px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto max-w-7xl">
           <h1 className="text-[2.03rem] font-extrabold leading-[1.05] text-black md:text-[3.3rem]">
@@ -87,7 +87,7 @@ function FAQAccordion({ items, defaultOpenIndex = 0 }) {
         return (
           <div
             key={`${idx}-${item.question}`}
-            className="overflow-hidden rounded-[10px] border border-black/10 bg-[black]"
+            className="overflow-hidden rounded-[10px] border border-black bg-white/1000]"
           >
             <button
               id={buttonId}
@@ -101,13 +101,13 @@ function FAQAccordion({ items, defaultOpenIndex = 0 }) {
                 text-left
               "
             >
-              <span className="text-[1.09rem] font-extrabold leading-[1.2] text-white md:text-[1.1rem]">
+              <span className="text-[1.09rem] font-extrabold leading-[1.2] text-black md:text-[1.1rem]">
                 {item.question}
               </span>
 
-              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white">
+              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black">
                 <ArrowIcon
-                  className={`h-5 w-5 text-black transition-transform duration-200 ${
+                  className={`h-5 w-5 text-white transition-transform duration-200 ${
                     isOpen ? "rotate-180" : "rotate-0"
                   }`}
                 />
@@ -121,7 +121,7 @@ function FAQAccordion({ items, defaultOpenIndex = 0 }) {
               className={isOpen ? "block" : "hidden"}
             >
               <div className="px-6 pb-5 pt-0">
-                <p className="text-[1.09rem] leading-[1.6] text-white md:text-[1.1rem]">
+                <p className="text-[1.09rem] leading-[1.6] text-black md:text-[1.1rem]">
                   {item.answer}
                 </p>
               </div>

@@ -31,8 +31,10 @@ export default function Home() {
       <GuaranteedSection />
 
       <OurServicesSection
-        title="Frequently Asked Questions About Relocating in San Antonio"
-        description="Preparing for a move can feel like a lot to manage..."
+        title="We Offer Additional Services, that makes your Moving Seamless"
+        description="Preparing for a move can feel like a lot to manage.Preparing for a move can feel like a lot to manage.
+        Preparing for a move can feel like a lot to manage. Preparing for a move can feel like a lot to manage.
+         Preparing for a move can feel like a lot to manage."
         services={OUR_SERVICES}
       />
 

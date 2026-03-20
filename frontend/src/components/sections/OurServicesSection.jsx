@@ -31,7 +31,7 @@ export default function OurServicesSection({
               ) : null}
 
               {description ? (
-                <p className="mt-4 text-[1.09rem] leading-[1.6] text-black/80 md:text-[1.1rem]">
+                <p className="mt-4 text-[1.12rem] leading-[1.6] text-black md:text-[1.2rem]">
                   {description}
                 </p>
               ) : null}

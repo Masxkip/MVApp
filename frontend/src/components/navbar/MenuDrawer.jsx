@@ -44,7 +44,7 @@ export default function MenuDrawer({ isOpen, closeMenu }) {
           {/* Header: fixed size (does NOT shrink on dropdown open) */}
           <div className="bg-[#f75a05] px-5 py-3 md:px-7 md:py-3.5">
             <div className="flex min-h-[52px] items-center justify-between gap-4 md:min-h-[60px]">
-              <h2 className="font-brand uppercase text-[1.85rem] leading-[0.95] md:text-[1.52rem]">
+              <h2 className="font-brand uppercase text-[1.85rem] leading-[0.95] md:text-[1.65rem]">
                 Main Menu
               </h2>
 

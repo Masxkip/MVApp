@@ -4,8 +4,8 @@ import noSurpriseImg from "../../assets/c.png";
 export default function NoSurpriseFeeSection({
   title = (
     <>
-      Our <span className="text-[#f75a05]">flat fee</span> pricing
-      <span className="block">means no hidden surprises, ever.</span>
+      Our <span className="text-[#f75a05]">flat fee</span> pricing means
+       no hidden surprises, ever.
     </>
   ),
   imageSrc = noSurpriseImg,
@@ -59,7 +59,7 @@ export default function NoSurpriseFeeSection({
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
             <div>
-              <p className="text-[1.25rem] font-extrabold leading-[1.55] text-black md:text-[1.8rem]">
+              <p className="text-[1.25rem] font-extrabold leading-[1.55] text-black md:text-[1.6rem]">
                 {leftBody}
               </p>
             </div>
@@ -77,7 +77,7 @@ export default function NoSurpriseFeeSection({
                       <CheckIcon className="h-3.5 w-3.5 text-white" />
                     </span>
 
-                    <p className="text-[1.05rem] font-[700] leading-[1.6] text-black md:text-[1.2rem]">
+                    <p className="text-[1.05rem] leading-[1.6] text-black md:text-[1.2rem]">
                       {text}
                     </p>
                   </li>

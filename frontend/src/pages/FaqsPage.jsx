@@ -140,8 +140,8 @@ export default function FaqsPage() {
           <div className="mx-auto max-w-7xl">
             <header className="max-w-6xl">
               <p
-                className="text-[1.3rem] font-bold leading-[1.1] md:text-[1.5rem]"
-                style={{ color: "#1c2470" }}
+                className="text-[1.2rem] font-bold leading-[1.1] md:text-[1.35rem]"
+                style={{ color: "black" }}
               >
                 We have put together a detailed list of frequently asked questions
                 and helpful answers about moving and storage, so you can feel more
@@ -175,7 +175,7 @@ function FaqTopicBlock({ topic, items, groupIndex }) {
     <section>
       <h2
         className="text-[1.7rem] font-extrabold leading-[1.08] md:text-[2.45rem]"
-        style={{ color: "#ff4aa2" }}
+        style={{ color: "#f75a05" }}
       >
         {topic}
       </h2>
@@ -189,7 +189,7 @@ function FaqTopicBlock({ topic, items, groupIndex }) {
           return (
             <div
               key={`${idx}-${item.question}`}
-              className="overflow-hidden rounded-[10px] border border-black/10 bg-[black]"
+              className="overflow-hidden rounded-[10px] border border-black bg-[white]"
             >
               <button
                 id={buttonId}
@@ -199,13 +199,13 @@ function FaqTopicBlock({ topic, items, groupIndex }) {
                 onClick={() => setOpenIndex(isOpen ? -1 : idx)}
                 className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
               >
-                <span className="text-[1.09rem] font-extrabold leading-[1.2] text-white md:text-[1.1rem]">
+                <span className="text-[1.09rem] font-extrabold leading-[1.2] text-black md:text-[1.1rem]">
                   {item.question}
                 </span>
 
-                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white">
+                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black">
                   <ArrowIcon
-                    className={`h-5 w-5 text-black transition-transform duration-300 ${
+                    className={`h-5 w-5 text-white transition-transform duration-300 ${
                       isOpen ? "rotate-180" : "rotate-0"
                     }`}
                   />
@@ -222,7 +222,7 @@ function FaqTopicBlock({ topic, items, groupIndex }) {
               >
                 <div className="min-h-0">
                   <div className="px-6 pb-5 pt-0">
-                    <p className="text-[1.09rem] leading-[1.6] text-white md:text-[1.1rem]">
+                    <p className="text-[1.09rem] leading-[1.6] text-black md:text-[1.1rem]">
                       {item.answer}
                     </p>
                   </div>

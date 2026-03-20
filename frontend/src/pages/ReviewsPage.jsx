@@ -8,14 +8,14 @@ export default function ReviewsPage() {
       <div className="mx-auto max-w-7xl">
         <h3
           className="text-[2.03rem] font-extrabold leading-[1.1] md:text-[3.3rem]"
-          style={{ color: "#1c2470" }}
+          style={{ color: "black" }}
         >
           Real moving & storage reviews from real customers
         </h3>
 
         <p
           className="mt-4 max-w-6xl text-[1.09rem] leading-[1.7] md:text-[1.1rem]"
-          style={{ color: "#1c2470" }}
+          style={{ color: "black" }}
         >
           At Vancouver Best Movers, we are dedicated to delivering dependable,
           high-quality service to each and every customer. No matter how small

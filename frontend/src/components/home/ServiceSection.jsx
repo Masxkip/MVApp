@@ -15,15 +15,15 @@ export default function ServiceSection({ ids, title, subtitle, variant = "light"
           {(title || subtitle) && (
             <header>
               {title ? (
-                <h1 className="text-[2.03rem] font-extrabold text-[black] md:text-[3.3rem]">
-                  Keep moving forward with our complete
-                  <span className="block">moving services</span>
+                <h1 className="text-[2.03rem] font-extrabold leading-[1.05] text-[black] md:text-[3.3rem]">
+                  Keep <span className="text-[#f75a05]">moving forward with</span> 
+                  <span className="block"> our complete moving services</span>
                 </h1>
               ) : null}
 
               {subtitle ? (
                 <p
-                  className={`mt-4 text-[1.09rem] leading-[1.6] md:text-[1.1rem] ${
+                  className={`mt-4 text-[1.09rem] leading-[1.6] font-semibold md:text-[1.6rem] ${
                     isDark ? "text-black/80" : "text-black/80"
                   }`}
                 >
