@@ -1,6 +1,7 @@
+
 // ================================================
 // File: src/components/moving-location/MovingLocationTemplate.jsx
-// Renders Image 1→2→3→4, exactly in that order.
+// Adds: SplitAfterHeroSection after HeroBanner.
 // ================================================
 import React from "react";
 
@@ -10,6 +11,11 @@ export default function MovingLocationTemplate({ location }) {
       <TopTitleBar {...location.titleBar} />
       <SplitPackingSection {...location.split} />
       <HeroBanner {...location.hero} />
+
+      {location.splitAfterHero ? (
+        <SplitAfterHeroSection {...location.splitAfterHero} />
+      ) : null}
+
       <WhyChooseSection {...location.why} />
     </main>
   );
@@ -27,24 +33,19 @@ function TopTitleBar({ title, bg = "#2b3a86" }) {
   );
 }
 
-function SplitPackingSection({
-  image,
-  accent,
-  heading,
-  paragraphs = [],
-}) {
+function SplitPackingSection({ image, accent, heading, paragraphs = [] }) {
   const offset = Math.max(0, Number(accent?.offsetPx ?? 18));
+  const accentBg = accent?.bg ?? "#ff3aa6";
 
   return (
     <section className="w-full bg-white">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-8 md:py-16">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1fr_1fr] md:gap-14">
-          {/* Image w/ accent block */}
           <div className="relative">
             <div
               className="absolute rounded-[22px]"
               style={{
-                
+                backgroundColor: accentBg,
                 inset: 0,
                 transform: `translate(${offset}px, ${offset}px)`,
               }}
@@ -59,7 +60,6 @@ function SplitPackingSection({
             </div>
           </div>
 
-          {/* Text */}
           <div>
             <h2 className="whitespace-pre-line text-[2.1rem] font-extrabold leading-[1.05] text-[#0b1a4a] md:text-[3.2rem]">
               {heading}
@@ -121,6 +121,69 @@ function HeroBanner({ bgImage, overlay, heading, paragraph, cta }) {
                 {cta.label ?? "GET A QUOTE"}
               </a>
             ) : null}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// NEW: After-hero split (Text LEFT, Image RIGHT, smaller image)
+function SplitAfterHeroSection({
+  image,
+  accent,
+  heading,
+  paragraphs = [],
+  size = "sm",
+}) {
+  const offset = Math.max(0, Number(accent?.offsetPx ?? 14));
+  const accentBg = accent?.bg ?? "#ff3aa6";
+
+  const heightClass =
+    size === "sm"
+      ? "h-[260px] md:h-[420px]"
+      : "h-[320px] md:h-[520px]";
+
+  return (
+    <section className="w-full bg-white">
+      <div className="mx-auto max-w-7xl px-4 py-12 md:px-8 md:py-16">
+        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1fr_1fr] md:gap-14">
+          {/* Text LEFT */}
+          <div className="md:order-1">
+            <h2 className="whitespace-pre-line text-[2.05rem] font-extrabold leading-[1.05] text-[#0b1a4a] md:text-[3.05rem]">
+              {heading}
+            </h2>
+
+            <div className="mt-6 space-y-7">
+              {paragraphs.map((p, i) => (
+                <p
+                  key={i}
+                  className="text-[1.05rem] leading-[1.9] text-[#0b1a4a] md:text-[1.08rem]"
+                >
+                  {p}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          {/* Image RIGHT (smaller) */}
+          <div className="relative md:order-2">
+            <div
+              className="absolute rounded-[22px]"
+              style={{
+                backgroundColor: accentBg,
+                inset: 0,
+                transform: `translate(${offset}px, ${offset}px)`,
+              }}
+              aria-hidden="true"
+            />
+            <div className="relative overflow-hidden rounded-[22px] bg-[#f75a05] p-2">
+              <img
+                src={image?.src}
+                alt={image?.alt ?? ""}
+                className={`${heightClass} w-full rounded-[18px] object-cover`}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
 // File: src/components/home/HeroSection.jsx
 // ================================================
 import { NavLink } from "react-router-dom";
-import heroBg from "../../assets/j.jpg";
+import heroBg from "../../assets/v/v3.jpg";
 
 const STATS = [
   {

@@ -1,7 +1,7 @@
 // src/pages/AboutUs.jsx
 import React from "react";
-import storyImg from "../assets/c.png";
-import whoWeAreImg from "../assets/c.png";
+import storyImg from "../assets/v/v2.jpg";
+import whoWeAreImg from "../assets/v/v3.jpg";
 
 
 

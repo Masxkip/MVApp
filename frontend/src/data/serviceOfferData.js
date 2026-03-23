@@ -3,8 +3,8 @@
 // DATA ONLY (no JSX).
 // Image order: 1 → 2 → 3 → 4
 // ================================================
-import img1 from "../assets/c.png"; // replace with real packing image
-import img2 from "../assets/c.png"; // replace
+import img1 from "../assets/v/m7.jpg"; // replace with real packing image
+import img2 from "../assets/v/d2.jpg"; // replace
 
 
 export const SERVICE_OFFER_BY_SLUG = {

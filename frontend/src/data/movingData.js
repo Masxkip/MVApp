@@ -2,9 +2,9 @@
 // File: src/data/movingData.js
 // DATA ONLY (no JSX). Order matches screenshots: 1 → 2 → 3 → 4 → 5
 // ================================================
-import sec1Img from "../assets/c.png"; // replace
-import heroBg from "../assets/c.png"; // replace
-import sec4Img from "../assets/c.png"; // replace
+import sec1Img from "../assets/v/d3.jpg"; // replace
+import heroBg from "../assets/v/m7.jpg"; // replace
+import sec4Img from "../assets/v/d5.jpg"; // replace
 
 export const MOVING_BY_SLUG = {
   commercial: {
@@ -74,21 +74,7 @@ export const MOVING_BY_SLUG = {
         "Storage cabinets, shelves, and other storage units",
         "Business signs and logos, both indoor and outdoor",
         "Portable lighting fixtures and lamps",
-        "Kitchen appliances, including refrigerators, microwaves, and coffee makers",
-        "Stationery and office supplies, including pens, paper, and staplers",
-        "Hard copies of important documents, reports, and files",
       ],
-    },
-
-    // 5) Why choose: left heading + paragraphs, right two highlight bullets
-    section5: {
-      heading: "Why Businesses Choose\nVancouver Best Movers",
-      paragraphs: [
-        "We have been doing office and commercial moves for years. We are fully insured and hold the appropriate accreditations, providing peace of mind throughout the entire process.",
-        "Our experienced team is familiar with the unique moving challenges of busy cities, including traffic, parking, building access, and elevators. Let us handle the logistics so you can focus on running your business.",
-      ],
-      highlightsLeft: ["Years in business", "Moves on time"],
-      highlightsRight: ["Fully licensed and insured"],
     },
   },
 };

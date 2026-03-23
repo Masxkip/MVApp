@@ -11,4 +11,28 @@
    <div className="px-4 pt-5 pb-10 md:px-8 md:pt-7 md:pb-14"></div> for section size
 
 
+NO LABLES. Only three colors you should make use of background-color: 
+#050504; background-color: #f75a05; background-color: #ffffff;. 
+Background white, main color orange the outlines black.
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

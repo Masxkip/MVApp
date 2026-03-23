@@ -12,13 +12,7 @@ export default function App() {
       <main className="pt-24">
         <Outlet />
       </main>
-      <GetQuoteCta
-              headlineTop="Ready to get moving?"
-              headlineBottom="Get your free quote"
-              buttonText="Get your quote"
-              to="/contact"
-              bgClass="bg-[#f75a05]"
-            />
+       <GetQuoteCta to="/quote" />
       <Footer />
     </div>
   );

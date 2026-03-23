@@ -95,7 +95,7 @@ export default function OurServiceCard({
             {href ? (
               <Link
                 to={href}
-                className="mt-4 inline-block text-[1.05rem] font-bold text-[#f75a05] transition duration-300 hover:opacity-80"
+                className="mt-5 block w-fit mx-auto text-[1.05rem] font-bold text-[#f75a05] underline-offset-4 transition duration-200 hover:underline md:text-[1.1rem]"
               >
                 {linkLabel}
               </Link>
@@ -131,7 +131,7 @@ export default function OurServiceCard({
         {href ? (
           <Link
             to={href}
-            className="mt-5 inline-block text-[1.05rem] font-bold text-[#f75a05] transition duration-300 hover:opacity-80 md:text-[1.1rem]"
+            className="mt-5 block w-fit mx-auto text-[1.05rem] font-bold text-[#f75a05] underline-offset-4 transition duration-200 hover:underline md:text-[1.1rem]"
           >
             {linkLabel}
           </Link>

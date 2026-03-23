@@ -1,6 +1,6 @@
 // src/components/sections/WhyChooseSection.jsx
 import React from "react";
-import whyChooseImg from "../../assets/c.png";
+import whyChooseImg from "../../assets/v/m6.jpg";
 
 export default function WhyChooseSection({
   variant = "top",

@@ -22,7 +22,7 @@ export default function HireUsSection({
                 heading ?? (
                   <>
                     When Experience and Genuine Care Matter, We&apos;re Here to Help.
-                    <span className="block">Call Texas Best Movers</span>
+                    <span className="block">Call Vancouver Best Movers</span>
                   </>
                 )
               }
@@ -39,7 +39,7 @@ export default function HireUsSection({
             />
           ) : (
             <BottomHireUs
-              heading={heading ?? "Serving San Antonio with Experience and Attention to Detail"}
+              heading={heading ?? "Serving Greater Vancouver with Experience and Attention to Detail"}
               leftItems={
                 leftItems.length
                   ? leftItems

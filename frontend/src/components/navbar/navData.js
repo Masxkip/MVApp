@@ -10,8 +10,8 @@ export const navData = [
     label: "Moving",
     href: "moving/:moveSlug",
     children: [
-      { id: "moving-commercial", label: "commercial", href: "/moving/movecommercial" },
-      { id: "moving-long-distance", label: "Long Distance Moving", href: "/moving/movecommercial"},
+      { id: "moving-commercial", label: "commercial", href: "/moving/commercial" },
+      { id: "loc-vancouver", label: "Vancouver", href: "/moving-location/alamo-heights" },
       { id: "moving-packing", label: "Packing Services", href: "/moving/packing" },
       { id: "moving-packing", label: "Packing Services", href: "/moving/packing" },
       { id: "moving-packing", label: "Packing Services", href: "/moving/packing" },

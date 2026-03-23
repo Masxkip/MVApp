@@ -74,7 +74,7 @@ export default function MovingServiceCard({ service, defaultOpen = false }) {
 
             <Link
               to={service.link}
-              className="mt-4 inline-block text-[1.05rem] font-bold text-[#f75a05] underline-offset-4 transition duration-200 hover:underline"
+              className="mt-5 block w-fit mx-auto text-[1.05rem] font-bold text-[#f75a05] underline-offset-4 transition duration-200 hover:underline md:text-[1.1rem]"
             >
               Learn More
             </Link>
@@ -104,7 +104,7 @@ export default function MovingServiceCard({ service, defaultOpen = false }) {
 
         <Link
           to={service.link}
-          className="mt-5 inline-block text-[1.05rem] font-bold text-[#f75a05] underline-offset-4 transition duration-200 hover:underline md:text-[1.1rem]"
+          className="mt-5 block w-fit mx-auto text-[1.05rem] font-bold text-[#f75a05] underline-offset-4 transition duration-200 hover:underline md:text-[1.1rem]"
         >
           Learn More
         </Link>

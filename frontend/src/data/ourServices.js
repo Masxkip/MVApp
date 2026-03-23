@@ -4,12 +4,12 @@
 
 // NOTE: For Vite, importing images is the most reliable for production builds.
 // Replace these imports with your real icon files.
-import iconFullPacking from "../assets/c.png";
-import iconPlatinumPacking from "../assets/c.png";
-import iconPlasticBin from "../assets/c.png";
-import iconBoxDelivery from "../assets/c.png";
-import iconValuablePacking from "../assets/c.png";
-import iconPianos from "../assets/c.png";
+import iconFullPacking from "../assets/s/s1.png";
+import iconPlatinumPacking from "../assets/s/s6.png";
+import iconPlasticBin from "../assets/s/s4.png";
+import iconBoxDelivery from "../assets/s/s3.png";
+import iconValuablePacking from "../assets/s/s5.png";
+import iconPianos from "../assets/s/s2.png";
 
 export const OUR_SERVICES = [
   {

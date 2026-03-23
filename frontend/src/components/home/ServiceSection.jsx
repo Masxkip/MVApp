@@ -16,8 +16,9 @@ export default function ServiceSection({ ids, title, subtitle, variant = "light"
             <header>
               {title ? (
                 <h1 className="text-[2.03rem] font-extrabold leading-[1.05] text-[black] md:text-[3.3rem]">
-                  Keep <span className="text-[#f75a05]">moving forward with</span> 
-                  <span className="block"> our complete moving services</span>
+                  Keep <span className="text-[#f75a05]">moving forward with </span><span className="text-[black]">
+                    our complete</span> 
+                  <span className="block"> moving services</span>
                 </h1>
               ) : null}
 

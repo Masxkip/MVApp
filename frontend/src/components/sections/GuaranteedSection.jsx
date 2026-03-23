@@ -1,6 +1,9 @@
 // src/components/sections/GuaranteedSection.jsx
 import React, { useId, useMemo, useState } from "react";
-import guaranteedImg from "../../assets/c.png";
+import guaranteedImg from "../../assets/v/v1.jpg";
+
+const ACCORDION_DURATION = "duration-500";
+const ACCORDION_EASING = "ease-out";
 
 export default function GuaranteedSection({
   pageTitle = "What’s Included In Our Guaranteed Services",
@@ -18,10 +21,7 @@ export default function GuaranteedSection({
           "Computers – Packed in cardboard box with protection",
           "Wardrobe Clothes – Hung in wardrobe box",
           "Mirrors – Packed in cardboard box with protection",
-          "Lamps – Disassembled, wrapped and packed in cardboard box with protection",
-          "Artwork – Packed in cardboard box or wooden picture crate with protection*",
-          "Sculptures – Wrapped and packed in cardboard box or wooden crate with protection*",
-          "Pianos – Piano boards are included",
+          "Lamps – Disassembled, wrapped and packed in cardboard box with protection"
         ],
         note:
           "* Some services must be requested in advance but are included in Guaranteed Services quote prior to move",
@@ -77,7 +77,8 @@ export default function GuaranteedSection({
 
           <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-stretch md:gap-10">
             <div className="h-full">
-              <div className="h-[320px] overflow-hidden rounded-[14px] md:h-full md:min-h-[470px]">
+              {/* Added “blank ring” + reduced height */}
+               <div className="h-[300px] overflow-hidden rounded-[14px] ring-8 ring-black md:h-full md:min-h-[440px]">
                 <img src={imageSrc} alt={imageAlt} className="h-full w-full object-cover" />
               </div>
             </div>
@@ -119,20 +120,23 @@ function Accordion({ items, defaultOpenIndex = 0 }) {
                 {item.title}
               </span>
 
-              <span className="mt-0.5 inline-flex h-7 w-7 items-center justify-center">
+              <span className="mt-0.5 inline-flex h-8 w-8 items-center justify-center">
                 <ArrowIcon
-                  className={`h-5 w-5 text-black transition-transform duration-200 ${
+                  className={`h-5 w-5 text-black transition-transform ${ACCORDION_DURATION} ${ACCORDION_EASING} ${
                     isOpen ? "rotate-180" : "rotate-0"
                   }`}
                 />
               </span>
             </button>
 
+            {/* Slower + smoother: no hidden/block, animate max-height + opacity */}
             <div
               id={panelId}
               role="region"
               aria-labelledby={buttonId}
-              className={`${isOpen ? "mt-4" : "mt-0"} ${isOpen ? "block" : "hidden"}`}
+              className={`overflow-hidden transition-[max-height,opacity,margin-top] ${ACCORDION_DURATION} ${ACCORDION_EASING} ${
+                isOpen ? "mt-4 max-h-[520px] opacity-100" : "mt-0 max-h-0 opacity-0"
+              }`}
             >
               {item.points?.length ? (
                 <ul className="space-y-3">
