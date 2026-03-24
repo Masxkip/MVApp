@@ -21,7 +21,7 @@ export default function WhyChooseSection({
         <div className="mx-auto max-w-7xl">
           {variant === "top" ? (
             <Top
-              heading={heading ?? <>Choose Texas Best for Your Next Move in or Around San Antonio</>}
+              heading={heading ?? <>Choose Vancouvers Best for Your Next Move in or Around Great Vancouver</>}
               paragraphs={
                 paragraphs.length
                   ? paragraphs
@@ -36,7 +36,7 @@ export default function WhyChooseSection({
             />
           ) : (
             <Bottom
-              heading={heading ?? "Why Choose Oz Moving & Storage?"}
+              heading={heading ?? "Why Choose Vancouver Best Movers?"}
               highlights={
                 highlights.length
                   ? highlights

@@ -299,7 +299,7 @@ export default function Quote() {
       <div className="mx-auto max-w-5xl px-5 py-10 font-brand sm:px-8 md:px-10">
         <div className="text-left">
           <h1 className="text-[2rem] font-extrabold leading-[1.05] tracking-tight text-[#050504] md:text-[3.3rem] md:tracking-[-0.02em]">
-            Your piece of cake move starts with a{" "}
+            Your seamless move starts with a{" "}
             <span className="text-[#f75a05]">free quote within minutes</span>
           </h1>
 

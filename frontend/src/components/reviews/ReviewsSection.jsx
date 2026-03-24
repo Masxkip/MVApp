@@ -11,14 +11,14 @@ export default function ReviewsSection({ limit = 6 }) {
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 md:mb-10">
           <h2 className="max-w-5xl text-[2.03rem] font-extrabold leading-[1.05] text-[black] md:text-[3.3rem]">
-            Everyone loves cake. Check out what our customers are saying about our unmatched moving service.
+            Check out what our customers are saying about our unmatched moving service.
           </h2>
 
           <Link
             to="/reviews"
-            className="mt-3 inline-block text-[1.15rem] font-bold text-[#f75a05] underline decoration-2 underline-offset-4 transition hover:opacity-80 md:text-[1.9rem]"
+            className="mt-3 inline-block text-[1.2rem] font-bold text-[#f75a05] underline decoration-2 underline-offset-4 transition hover:opacity-80 md:text-[1.7rem]"
           >
-            VAN’s highest rated moving company.
+            Vancouver's highest rated moving company.
           </Link>
         </div>
 

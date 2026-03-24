@@ -31,7 +31,7 @@ export default function Home() {
       <GuaranteedSection />
 
       <OurServicesSection
-        title="We Offer Additional Services, that makes your Moving Seamless"
+        title="We offer additional services, that makes your moving seamless"
         description="Preparing for a move can feel like a lot to manage.Preparing for a move can feel like a lot to manage.
         Preparing for a move can feel like a lot to manage. Preparing for a move can feel like a lot to manage.
          Preparing for a move can feel like a lot to manage."

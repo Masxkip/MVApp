@@ -34,7 +34,7 @@ export const OUR_SERVICES = [
   },
   {
     id: "plastic-bin-hire",
-    title: "Plastic Bin Hire",
+    title: "Furniture Assembly",
     description:
       "Our eco friendly plastic moving bins are delivered to your door with no assembly required. Once you’re done we will pick them up and sanitize them so that they can be used again.",
     imageSrc: iconPlasticBin,
@@ -54,7 +54,7 @@ export const OUR_SERVICES = [
   },
   {
     id: "valuable-item-packing",
-    title: "Valuable Item Packing",
+    title: "Fitness Equipment Movers",
     description:
       "Your valuable furniture pieces, antiques and artwork will be safely handled with the utmost care. We will build custom crates for your items, wrap them with durable packing material and ensure the appropriate lifting resources.",
     imageSrc: iconValuablePacking,
@@ -64,7 +64,7 @@ export const OUR_SERVICES = [
   },
   {
     id: "pianos",
-    title: "Pianos",
+    title: "Piano Moving",
     description:
       "It takes specialized skills, equipment and training to move a piano safely. We have experience moving upright, horizontal and all piano styles in between.",
     imageSrc: iconPianos,

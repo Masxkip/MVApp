@@ -6,7 +6,7 @@ const ACCORDION_DURATION = "duration-500";
 const ACCORDION_EASING = "ease-out";
 
 export default function GuaranteedSection({
-  pageTitle = "What’s Included In Our Guaranteed Services",
+  pageTitle = "What’s included in our guaranteed services",
   imageSrc = guaranteedImg,
   imageAlt = "Guaranteed services",
   items,

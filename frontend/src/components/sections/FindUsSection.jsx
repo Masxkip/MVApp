@@ -3,8 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function FindUsSection({
-  eyebrow = "Serving Texas Statewide",
-  title = "Find Us in Your City",
+  eyebrow = "Serving Great Vancouver",
+  title = "Find us in your city",
   items = defaultCities,
   backgroundClass = "bg-[#f7f7f7]",
   cardBgClass = "bg-white",
@@ -112,16 +112,16 @@ function LocationPinIcon({ className = "", color = "#f75a05" }) {
 }
 
 const defaultCities = [
-  { label: "Boerne", to: "/locations/boerne" },
-  { label: "Converse", to: "/locations/converse" },
-  { label: "Alamo Heights", to: "/locations/alamo-heights" },
-  { label: "Shavano Park", to: "/locations/shavano-park" },
-  { label: "Timberwood", to: "/locations/timberwood-park" },
-  { label: "Downtown", to: "/locations/downtown-san-antonio" },
-  { label: "Dominion", to: "/locations/dominion" },
-  { label: "Stone Oak", to: "/locations/stone-oak" },
-  { label: "Terrell Hills", to: "/locations/terrell-hills" },
-  { label: "Castle Hills", to: "/locations/castle-hills" },
-  { label: "Sonterra", to: "/locations/sonterra-stone-oak" },
-  { label: "Olmos Park", to: "/locations/olmos-park" },
+  { label: "Vancouver", to: "/locations/boerne" },
+  { label: "Burnaby", to: "/locations/converse" },
+  { label: "Surrey", to: "/locations/alamo-heights" },
+  { label: "Richmond", to: "/locations/shavano-park" },
+  { label: "Abbotsford", to: "/locations/timberwood-park" },
+  { label: "Langley", to: "/locations/downtown-san-antonio" },
+  { label: "Kamloops", to: "/locations/dominion" },
+  { label: "White Rock", to: "/locations/stone-oak" },
+  { label: "Chilliwack", to: "/locations/terrell-hills" },
+  { label: "Delta", to: "/locations/castle-hills" },
+  { label: "Coquitlam", to: "/locations/sonterra-stone-oak" },
+  { label: "Mission", to: "/locations/olmos-park" },
 ];

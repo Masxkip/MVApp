@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
  * - variant: "light" | "dark"
  */
 export default function FAQSection({
-  title = "Frequently Asked Questions About Relocating in San Antonio",
+  title = "Frequently asked questions about relocating in Vancouver",
 
   faqs,
   defaultOpenIndex = 0,
@@ -58,7 +58,7 @@ export default function FAQSection({
             to="/reviews"
             className="mt-3 inline-block text-[1.15rem] font-bold text-[#f75a05] underline decoration-2 underline-offset-4 transition hover:opacity-80 md:text-[1.6rem]"
           >
-            View More FAQS.
+            View more Faqs.
           </Link>
 
           
