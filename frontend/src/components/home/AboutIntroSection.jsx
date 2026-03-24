@@ -5,7 +5,7 @@ import heroLogo from "../../assets/hero.png";
 
 export default function AboutIntroSection() {
   return (
-    <section className="font-brand bg-[#f3f3f3] px-4 pt-5 pb-10 md:px-8 md:pt-7 md:pb-14">
+    <section className="font-brand bg-[#ffffff] px-4 pt-5 pb-10 md:px-8 md:pt-7 md:pb-14">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex flex-col items-center justify-center gap-4 text-center md:mb-10">
           <img

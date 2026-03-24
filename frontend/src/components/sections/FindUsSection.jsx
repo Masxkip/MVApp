@@ -6,7 +6,7 @@ export default function FindUsSection({
   eyebrow = "Serving Texas Statewide",
   title = "Find Us in Your City",
   items = defaultCities,
-  backgroundClass = "bg-[#f3f3f3]",
+  backgroundClass = "bg-[#f7f7f7]",
   cardBgClass = "bg-white",
   pillBgClass = "bg-black",
   pillTextClass = "text-white",

@@ -26,13 +26,13 @@ function Section1Split({ image, accent, heading, paragraphs = [] }) {
             <div
               className="absolute rounded-[22px]"
               style={{
-                backgroundColor: accent?.bg ?? "#ff3aa6",
+                backgroundColor: accent?.bg ?? "",
                 inset: 0,
                 transform: `translate(${offset}px, ${offset}px)`,
               }}
               aria-hidden="true"
             />
-            <div className="relative overflow-hidden rounded-[22px] bg-[#e9ecef] p-2">
+            <div className="relative overflow-hidden rounded-[22px] bg-[black] p-2">
               <img
                 src={image?.src}
                 alt={image?.alt ?? ""}
@@ -42,7 +42,7 @@ function Section1Split({ image, accent, heading, paragraphs = [] }) {
           </div>
 
           <div>
-            <h2 className="whitespace-pre-line text-[2.1rem] font-extrabold leading-[1.05] text-[#0b1a4a] md:text-[3.2rem]">
+            <h2 className="whitespace-pre-line text-[2.1rem] font-extrabold leading-[1.05] text-[black] md:text-[3.2rem]">
               {heading}
             </h2>
 
@@ -50,7 +50,7 @@ function Section1Split({ image, accent, heading, paragraphs = [] }) {
               {paragraphs.map((p, i) => (
                 <p
                   key={i}
-                  className="text-[1.05rem] leading-[1.9] text-[#0b1a4a] md:text-[1.08rem]"
+                  className="text-[1.05rem] leading-[1.9] text-[black] md:text-[1.08rem]"
                 >
                   {p}
                 </p>
@@ -69,7 +69,7 @@ function Section2Checklist({ title, left, right }) {
   return (
     <section className="w-full bg-white">
       <div className="mx-auto max-w-7xl px-4 py-10 md:px-8 md:py-12">
-        <h2 className="text-[2.1rem] font-extrabold leading-[1.05] text-[#0b1a4a] md:text-[3.2rem]">
+        <h2 className="text-[2.1rem] font-extrabold leading-[1.05] text-[black] md:text-[3.2rem]">
           {title}
         </h2>
 
@@ -80,13 +80,13 @@ function Section2Checklist({ title, left, right }) {
               <div
                 className="absolute rounded-[18px]"
                 style={{
-                  backgroundColor: left?.cardAccent?.bg ?? "#1b1f5d",
+                  backgroundColor: left?.cardAccent?.bg ?? "",
                   inset: 0,
                   transform: `translate(${offset}px, ${offset}px)`,
                 }}
                 aria-hidden="true"
               />
-              <div className="relative overflow-hidden rounded-[18px] bg-[#e9ecef] p-2">
+              <div className="relative overflow-hidden rounded-[18px] bg-[black] p-2">
                 <img
                   src={left?.image?.src}
                   alt={left?.image?.alt ?? ""}
@@ -99,7 +99,7 @@ function Section2Checklist({ title, left, right }) {
               {(left?.pinkParagraphs ?? []).map((p, i) => (
                 <p
                   key={i}
-                  className="text-[1.9rem] font-extrabold leading-[1.1] text-[#ff3aa6] md:text-[2.3rem]"
+                  className="text-[1.4rem] font-extrabold leading-[1.1] text-[black] md:text-[1.7rem]"
                 >
                   {p}
                 </p>
@@ -109,7 +109,7 @@ function Section2Checklist({ title, left, right }) {
 
           {/* Right checklist */}
           <div>
-            <h3 className="text-[1.7rem] font-extrabold leading-[1.15] text-[#0b1a4a] md:text-[2.1rem]">
+            <h3 className="text-[1.4rem] font-extrabold leading-[1.15] text-[black] md:text-[1.7rem]">
               {right?.heading}
             </h3>
 
@@ -119,7 +119,7 @@ function Section2Checklist({ title, left, right }) {
                   <span className="mt-[2px] inline-flex h-8 w-8 items-center justify-center">
                     <PinkCheck className="h-7 w-7" />
                   </span>
-                  <p className="text-[1.05rem] leading-[1.9] text-[#0b1a4a] md:text-[1.08rem]">
+                  <p className="text-[1.05rem] leading-[1.9] text-[black] md:text-[1.08rem]">
                     {text}
                   </p>
                 </div>
@@ -142,7 +142,7 @@ function Section3Steps({ leftPink = [], steps = [] }) {
             {leftPink.map((p, i) => (
               <p
                 key={i}
-                className="text-[2.2rem] font-extrabold leading-[1.1] text-[#ff3aa6] md:text-[2.6rem]"
+                className="text-[1.4rem] font-extrabold leading-[1.1] text-[black] md:text-[1.75rem]"
               >
                 {p}
               </p>
@@ -152,9 +152,9 @@ function Section3Steps({ leftPink = [], steps = [] }) {
           {/* Right numbered steps */}
           <div className="space-y-12">
             {steps.map((s, i) => (
-              <div key={i} className="text-[#0b1a4a]">
+              <div key={i} className="text-[black]">
                 <p className="text-[1.2rem] font-extrabold leading-[1.35] md:text-[1.25rem]">
-                  <span className="text-[#ff3aa6]">{i + 1}. {s.title}</span>{" "}
+                  <span className="text-[black]">{i + 1}. {s.title}</span>{" "}
                   <span className="font-normal">{s.body}</span>
                 </p>
               </div>
@@ -175,13 +175,13 @@ function Section4Cta({
 }) {
   return (
     <section className="w-full" style={{ backgroundColor: bg }}>
-      <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
+      <div className="mx-auto max-w-7xl px-2 py-4 md:px-2 md:py-4">
         <div className="mx-auto max-w-5xl text-center">
-          <h2 className="text-[2.1rem] font-extrabold leading-[1.05] text-[#0b1a4a] md:text-[3.1rem]">
+          <h2 className="text-[2.1rem] font-extrabold leading-[1.05] text-[black] md:text-[3.1rem]">
             {heading}
           </h2>
 
-          <p className="mx-auto mt-6 max-w-4xl text-[1.05rem] leading-[1.9] text-[#0b1a4a] md:text-[1.08rem]">
+          <p className="mx-auto mt-6 max-w-4xl text-[1.05rem] leading-[1.9] text-[black] md:text-[1.08rem]">
             {paragraph}
           </p>
 
@@ -189,7 +189,7 @@ function Section4Cta({
             {primaryCta?.href ? (
               <a
                 href={primaryCta.href}
-                className="inline-flex w-full max-w-[420px] items-center justify-center gap-3 rounded-[8px] bg-[#ff3aa6] px-10 py-5 text-sm font-extrabold uppercase tracking-wide text-white md:w-auto"
+                className="inline-flex w-full max-w-[420px] items-center justify-center gap-3 rounded-[8px] bg-[black] px-8 py-4 text-sm font-extrabold uppercase tracking-wide text-white md:w-auto"
               >
                 {primaryCta.label}
                 <ArrowUpRight className="h-5 w-5" />
@@ -199,7 +199,7 @@ function Section4Cta({
             {secondaryCta?.href ? (
               <a
                 href={secondaryCta.href}
-                className="inline-flex w-full max-w-[420px] items-center justify-center gap-3 rounded-[8px] bg-[#1b1f5d] px-10 py-5 text-sm font-extrabold tracking-wide text-white md:w-auto"
+                className="inline-flex w-full max-w-[420px] items-center justify-center gap-3 rounded-[8px] bg-[#f75a05] px-8 py-4 text-sm font-extrabold tracking-wide text-white md:w-auto"
               >
                 <PhoneIcon className="h-5 w-5" />
                 {secondaryCta.label}

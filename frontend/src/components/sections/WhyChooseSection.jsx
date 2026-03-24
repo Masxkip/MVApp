@@ -130,7 +130,7 @@ function Bottom({ heading, highlights, bullets, imageSrc, imageAlt }) {
       </div>
 
       <div>
-        <div className="overflow-hidden rounded-[18px]">
+        <div className="overflow-hidden rounded-[18px] ring-7 ring-black">
           <img
             src={imageSrc}
             alt={imageAlt}

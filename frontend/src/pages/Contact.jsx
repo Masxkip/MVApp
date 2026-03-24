@@ -91,10 +91,10 @@ export default function Contact() {
   const labelBase =
     "text-[1.02rem] font-extrabold leading-[1.02] tracking-[-0.02em] text-white md:text-[1.05rem]";
 
-  const req = <span className="ml-2 text-red-500">*</span>;
+  const req = <span className="ml-2 text-orange-500">*</span>;
 
   return (
-    <main className="w-full bg-[#1f1f1f] font-brand text-white">
+    <main className="w-full bg-[white] font-brand text-white">
       {/* =======================
           TOP: CORPORATE CONTACT
          ======================= */}
@@ -177,8 +177,9 @@ export default function Contact() {
       {/* =======================
           FORM: CONTACT US
          ======================= */}
-      <section id="contact-form" className="w-full bg-[#1f1f1f]">
-        <div className="mx-auto max-w-7xl px-4 py-10 md:px-8 md:py-14">
+         
+      <section id="contact-form" className="w-full bg-[white]">
+        <div className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-0">
           <div className="max-w-3xl">
             <h2 className="text-[2.03rem] font-extrabold text-white md:text-[3.3rem]">
               CONTACT US
@@ -186,7 +187,7 @@ export default function Contact() {
 
             <form
               onSubmit={onSubmit}
-              className="mt-6 rounded-2xl bg-black/60 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.4)] ring-1 ring-white/10 md:p-7"
+              className="mt-6 rounded-2xl bg-black p-5 shadow-[0_18px_45px_rgba(0,0,0,0.4)] ring-1 ring-white/10 md:p-7"
               noValidate
             >
               {status.type !== "idle" ? (
@@ -266,7 +267,7 @@ export default function Contact() {
                   className={classNames(
                     "mt-2",
                     inputBase,
-                    touched.email && errors.email && "ring-2 ring-[#f2b400]"
+                    touched.email && errors.email && "ring-2 ring-[#f75a05]"
                   )}
                   autoComplete="email"
                 />
@@ -345,7 +346,9 @@ export default function Contact() {
                   {isSubmitting ? "Sending..." : "Contact"}
                 </button>
               </div>
+            
             </form>
+            <br />
           </div>
         </div>
       </section>

@@ -106,7 +106,7 @@ function SplitImageTextSection({
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-14 lg:gap-16">
             {/* Image */}
             <div className={`${isImageLeft ? "md:order-1" : "md:order-2"}`}>
-              <div className="overflow-hidden rounded-[18px]">
+              <div className="overflow-hidden rounded-[18px] ring-7 ring-black">
                 <img
                   src={imageSrc}
                   alt={imageAlt}

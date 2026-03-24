@@ -18,7 +18,7 @@ export const MOVING_BY_SLUG = {
     // 1) Split image + pink accent + right text
     section1: {
       image: { src: sec1Img, alt: "Commercial moving truck" },
-      accent: { bg: "#ff3aa6", offsetPx: 18 },
+      accent: { bg: "", offsetPx: 18 },
       heading: "Fully Insured office and\ncommercial moving services",
       introBold:
         "We are not just a residential moving company, we’re also expert commercial office movers.",
@@ -32,7 +32,7 @@ export const MOVING_BY_SLUG = {
       bgImage: heroBg,
       overlay: { color: "#000000", opacity: 0.55 },
       heading: "Trust Us To Take Care of Your\nBusiness",
-      cta: { label: "Get Quote", href: "/quote", bg: "#ffe43a", text: "#111111" },
+      cta: { label: "Get Quote", href: "/quote", bg: "#f75a05", text: "#111111" },
       numbered: [
         "Fully licensed and insured movers",
         "Clear labels & matching inventory list",
@@ -73,7 +73,7 @@ export const MOVING_BY_SLUG = {
         "Personal belongings of employees, labeled",
         "Storage cabinets, shelves, and other storage units",
         "Business signs and logos, both indoor and outdoor",
-        "Portable lighting fixtures and lamps",
+        
       ],
     },
   },

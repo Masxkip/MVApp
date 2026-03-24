@@ -78,7 +78,7 @@ export default function GuaranteedSection({
           <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-stretch md:gap-10">
             <div className="h-full">
               {/* Added “blank ring” + reduced height */}
-               <div className="h-[300px] overflow-hidden rounded-[14px] ring-8 ring-black md:h-full md:min-h-[440px]">
+               <div className="h-[300px] overflow-hidden rounded-[14px] ring-7 ring-black md:h-full md:min-h-[440px]">
                 <img src={imageSrc} alt={imageAlt} className="h-full w-full object-cover" />
               </div>
             </div>

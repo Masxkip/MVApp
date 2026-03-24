@@ -47,7 +47,7 @@ export default function FAQSection({
   const resolvedFaqs = faqs?.length ? faqs : defaultFaqs;
 
   return (
-    <section className={isDark ? "w-full bg-white font-brand" : "w-full bg-[#f3f3f3] font-brand"}>
+    <section className={isDark ? "w-full bg-white font-brand" : "w-full bg-[white] font-brand"}>
       <div className="px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto max-w-7xl">
           <h1 className="text-[2.03rem] font-extrabold leading-[1.05] text-black md:text-[3.3rem]">

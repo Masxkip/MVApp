@@ -9,10 +9,10 @@ export const MOVING_LOCATIONS_BY_SLUG = {
   "alamo-heights": {
     slug: "alamo-heights",
     cityName: "Alamo Heights",
-    titleBar: { title: "Alamo Heights", bg: "#2b3a86" },
+    titleBar: { title: "Alamo Heights", bg: "black" },
     split: {
       image: { src: splitImg, alt: "Professional packing services" },
-      accent: { bg: "#ff3aa6", offsetPx: 18 },
+      accent: { bg: "", offsetPx: 18 },
       heading: "Many hands make light work.\nLet ours pack for you.",
       paragraphs: [
         "Our full packing service takes care of your packing at the pick up location of your move...",
@@ -21,14 +21,14 @@ export const MOVING_LOCATIONS_BY_SLUG = {
     },
     hero: {
       bgImage: heroBg,
-      overlay: { color: "#2b3a86", opacity: 0.68 },
+      overlay: { color: "black", opacity: 0.68 },
       heading: "Looking for Cheap Alamo Heights\nMoving Services?",
       paragraph: "Like many other locations, Texas Best Movers also offers...",
       cta: { label: "GET A QUOTE", href: "/quote" },
     },
     splitAfterHero: {
       image: { src: splitAfterHeroImg, alt: "Local movers and trucks" },
-      accent: { bg: "#ff3aa6", offsetPx: 14 },
+      accent: { bg: "", offsetPx: 14 },
       heading: "Local movers who know\nAlamo Heights.",
       paragraphs: [
         "Our crews understand local building access, parking constraints...",
@@ -37,7 +37,7 @@ export const MOVING_LOCATIONS_BY_SLUG = {
       size: "sm",
     },
     why: {
-      bg: "#2b3a86",
+      bg: "black",
       heading: "Why Choose Texas Best Movers in Alamo\nHeights",
       paragraph: "At Texas Best Movers, we do more than just move...",
       bullets: [

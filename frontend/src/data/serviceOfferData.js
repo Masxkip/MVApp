@@ -19,7 +19,7 @@ export const SERVICE_OFFER_BY_SLUG = {
     // 1) Split image + text (Image 1)
     section1: {
       image: { src: img1, alt: "Packing services" },
-      accent: { bg: "#ff3aa6", offsetPx: 18 },
+      accent: { bg: "", offsetPx: 18 },
       heading: "Many hands make light work.\nLet ours pack for you.",
       paragraphs: [
         "Our full packing service takes care of your packing at the pick up location of your move. We can pack all or some of your belongings so you can focus on other aspects of your move. All of your boxes and items will be securely delivered so you can peacefully unpack them in your new home at your own pace.",
@@ -32,7 +32,7 @@ export const SERVICE_OFFER_BY_SLUG = {
       title: "We can pack your kitchen, bedroom or entire home",
       left: {
         image: { src: img2, alt: "Professional packers at work" },
-        cardAccent: { bg: "#1b1f5d", offsetPx: 18 },
+        cardAccent: { bg: "", offsetPx: 18 },
         pinkParagraphs: [
           "You can decide if you want us to pack a few rooms or your entire home.",
           "Whatever the case, you’ll find clearly labelled boxes with your items protected and ready for move day.",
@@ -75,7 +75,7 @@ export const SERVICE_OFFER_BY_SLUG = {
 
     // 4) CTA (Image 4)
     section4: {
-      bg: "#efefef",
+      bg: "#f3f2f2",
       heading: "NYC’s most affordable packing service",
       paragraph:
         "With a flat price which includes all packing materials and physical labor to pack your items, we are NYC’s most affordable packing service. Let us pack and move you so you can focus on your destination.",

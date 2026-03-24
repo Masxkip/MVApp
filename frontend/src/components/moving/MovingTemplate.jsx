@@ -29,13 +29,13 @@ function Section1Split({ image, accent, heading, introBold, paragraphs = [] }) {
             <div
               className="absolute rounded-[22px]"
               style={{
-                backgroundColor: accent?.bg ?? "#ff3aa6",
+                backgroundColor: accent?.bg ?? "",
                 inset: 0,
                 transform: `translate(${offset}px, ${offset}px)`,
               }}
               aria-hidden="true"
             />
-            <div className="relative overflow-hidden rounded-[22px] bg-[#e9ecef] p-2">
+            <div className="relative overflow-hidden rounded-[22px] bg-[black] p-2">
               <img
                 src={image?.src}
                 alt={image?.alt ?? ""}
@@ -45,12 +45,12 @@ function Section1Split({ image, accent, heading, introBold, paragraphs = [] }) {
           </div>
 
           <div className="pt-2">
-            <h1 className="whitespace-pre-line text-[2.2rem] font-extrabold leading-[1.05] text-[#0b1a4a] md:text-[3.3rem]">
+            <h1 className="whitespace-pre-line text-[2.2rem] font-extrabold leading-[1.05] text-[black] md:text-[3.3rem]">
               {heading}
             </h1>
 
             {introBold ? (
-              <p className="mt-6 text-[1.15rem] font-extrabold leading-[1.6] text-[#0b1a4a] md:text-[1.2rem]">
+              <p className="mt-6 text-[1.15rem] font-extrabold leading-[1.6] text-[black] md:text-[1.2rem]">
                 {introBold}
               </p>
             ) : null}
@@ -59,7 +59,7 @@ function Section1Split({ image, accent, heading, introBold, paragraphs = [] }) {
               {paragraphs.map((p, i) => (
                 <p
                   key={i}
-                  className="text-[1.08rem] leading-[1.9] text-[#0b1a4a] md:text-[1.1rem]"
+                  className="text-[1.08rem] leading-[1.9] text-[black] md:text-[1.1rem]"
                 >
                   {p}
                 </p>
@@ -178,11 +178,11 @@ function Section4Assets({ image, heading, intro, checks = [] }) {
     <section className="w-full bg-white">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-20">
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[1fr_1fr] md:gap-14">
-          <div className="overflow-hidden rounded-[18px]">
+          <div className="overflow-hidden rounded-[18px] ring-7 ring-black">
             <img
               src={image?.src}
               alt={image?.alt ?? ""}
-              className="h-[360px] w-full object-cover md:h-[560px]"
+              className="h-[360px] w-full object-cover md:h-[530px]"
             />
           </div>
 

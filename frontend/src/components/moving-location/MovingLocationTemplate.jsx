@@ -35,7 +35,7 @@ function TopTitleBar({ title, bg = "#2b3a86" }) {
 
 function SplitPackingSection({ image, accent, heading, paragraphs = [] }) {
   const offset = Math.max(0, Number(accent?.offsetPx ?? 18));
-  const accentBg = accent?.bg ?? "#ff3aa6";
+  const accentBg = accent?.bg ?? "";
 
   return (
     <section className="w-full bg-white">
@@ -51,7 +51,7 @@ function SplitPackingSection({ image, accent, heading, paragraphs = [] }) {
               }}
               aria-hidden="true"
             />
-            <div className="relative overflow-hidden rounded-[22px] bg-[#f75a05] p-2">
+            <div className="relative overflow-hidden rounded-[22px] bg-[black] p-2">
               <img
                 src={image?.src}
                 alt={image?.alt ?? ""}
@@ -61,7 +61,7 @@ function SplitPackingSection({ image, accent, heading, paragraphs = [] }) {
           </div>
 
           <div>
-            <h2 className="whitespace-pre-line text-[2.1rem] font-extrabold leading-[1.05] text-[#0b1a4a] md:text-[3.2rem]">
+            <h2 className="whitespace-pre-line text-[2.1rem] font-extrabold leading-[1.05] text-[black] md:text-[3.2rem]">
               {heading}
             </h2>
 
@@ -69,7 +69,7 @@ function SplitPackingSection({ image, accent, heading, paragraphs = [] }) {
               {paragraphs.map((p, i) => (
                 <p
                   key={i}
-                  className="text-[1.05rem] leading-[1.9] text-[#0b1a4a] md:text-[1.08rem]"
+                  className="text-[1.05rem] leading-[1.9] text-[black] md:text-[1.08rem]"
                 >
                   {p}
                 </p>
@@ -83,7 +83,7 @@ function SplitPackingSection({ image, accent, heading, paragraphs = [] }) {
 }
 
 function HeroBanner({ bgImage, overlay, heading, paragraph, cta }) {
-  const overlayColor = overlay?.color ?? "#2b3a86";
+  const overlayColor = overlay?.color ?? "black";
   const overlayOpacity =
     typeof overlay?.opacity === "number" ? overlay.opacity : 0.7;
 
@@ -116,7 +116,7 @@ function HeroBanner({ bgImage, overlay, heading, paragraph, cta }) {
             {cta?.href ? (
               <a
                 href={cta.href}
-                className="mt-8 inline-flex items-center justify-center rounded-[6px] bg-[#b81c1c] px-10 py-4 text-sm font-bold uppercase tracking-wide text-white"
+                className="mt-8 inline-flex items-center justify-center rounded-[6px] bg-[#f75a05] px-10 py-4 text-sm font-bold uppercase tracking-wide text-white hover:bg-black"
               >
                 {cta.label ?? "GET A QUOTE"}
               </a>
@@ -137,7 +137,7 @@ function SplitAfterHeroSection({
   size = "sm",
 }) {
   const offset = Math.max(0, Number(accent?.offsetPx ?? 14));
-  const accentBg = accent?.bg ?? "#ff3aa6";
+  const accentBg = accent?.bg ?? "";
 
   const heightClass =
     size === "sm"
@@ -150,7 +150,7 @@ function SplitAfterHeroSection({
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1fr_1fr] md:gap-14">
           {/* Text LEFT */}
           <div className="md:order-1">
-            <h2 className="whitespace-pre-line text-[2.05rem] font-extrabold leading-[1.05] text-[#0b1a4a] md:text-[3.05rem]">
+            <h2 className="whitespace-pre-line text-[2.05rem] font-extrabold leading-[1.05] text-[black] md:text-[3.05rem]">
               {heading}
             </h2>
 
@@ -158,7 +158,7 @@ function SplitAfterHeroSection({
               {paragraphs.map((p, i) => (
                 <p
                   key={i}
-                  className="text-[1.05rem] leading-[1.9] text-[#0b1a4a] md:text-[1.08rem]"
+                  className="text-[1.05rem] leading-[1.9] text-[black] md:text-[1.08rem]"
                 >
                   {p}
                 </p>
@@ -177,7 +177,7 @@ function SplitAfterHeroSection({
               }}
               aria-hidden="true"
             />
-            <div className="relative overflow-hidden rounded-[22px] bg-[#f75a05] p-2">
+            <div className="relative overflow-hidden rounded-[22px] bg-[black] p-2">
               <img
                 src={image?.src}
                 alt={image?.alt ?? ""}

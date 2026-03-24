@@ -23,7 +23,7 @@ const COLORS = {
 const ACCORDION_MS = 550;
 
 export default function NoSurpriseFeeSection({
-  bgClass = "bg-[#f3f3f3]",
+  bgClass = "bg-white",
   containerClass = "px-4 py-12 md:px-8 md:py-16",
   maxWidthClass = "max-w-7xl",
   heading = {
@@ -150,7 +150,7 @@ export default function NoSurpriseFeeSection({
             </div>
 
             {/* Image accent removed */}
-            <div className="relative overflow-hidden rounded-[22px] bg-white ring-8 ring-black/90">
+            <div className="relative overflow-hidden rounded-[22px] bg-white ring-7 ring-black/90">
               {image?.src ? (
                 <img
                   src={image.src}
@@ -170,7 +170,7 @@ export default function NoSurpriseFeeSection({
             <div>
               <p
                 className="text-[1.35rem] font-extrabold leading-[1.25] md:text-[1.7rem]"
-                style={{ color: COLORS.accent }}
+                style={{ color: COLORS.ink }}
               >
                 {leftPinkText}
               </p>
@@ -205,7 +205,7 @@ export default function NoSurpriseFeeSection({
                         onClick={() => toggleIndex(idx)}
                       >
                         <span
-                          className="text-[1.05rem] font-extrabold leading-[1.35] md:text-[1.25rem]"
+                          className="text-[1.15rem] font-extrabold leading-[1.35] md:text-[1.25rem]"
                           style={{ color: COLORS.ink }}
                         >
                           {item.title}
