@@ -150,7 +150,7 @@ export default function NoSurpriseFeeSection({
             </div>
 
             {/* Image accent removed */}
-            <div className="relative overflow-hidden rounded-[22px] bg-white ring-7 ring-black/90">
+            <div className="relative overflow-hidden rounded-[22px] bg-white ring-5 ring-black/90">
               {image?.src ? (
                 <img
                   src={image.src}
