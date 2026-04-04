@@ -1,8 +1,7 @@
-// ================================================
-// File: src/components/service-offer/ServiceOfferTemplate.jsx
-// Renders Image 1 → 2 → 3 → 4 exactly.
-// ================================================
+// src/components/service-offer/ServiceOfferTemplate.jsx
 import React from "react";
+import { buttonClasses } from "../../data/buttonClasses";
+import { ButtonArrowUpRight } from "../ui/ButtonIcons";
 
 export function ServiceOfferTemplate({ offer }) {
   return (
@@ -74,7 +73,6 @@ function Section2Checklist({ title, left, right }) {
         </h2>
 
         <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-[0.95fr_1.05fr] md:gap-16">
-          {/* Left image card + pink copy */}
           <div>
             <div className="relative inline-block w-full max-w-[560px]">
               <div
@@ -107,7 +105,6 @@ function Section2Checklist({ title, left, right }) {
             </div>
           </div>
 
-          {/* Right checklist */}
           <div>
             <h3 className="text-[1.4rem] font-extrabold leading-[1.15] text-[black] md:text-[1.7rem]">
               {right?.heading}
@@ -137,7 +134,6 @@ function Section3Steps({ leftPink = [], steps = [] }) {
     <section className="w-full bg-white">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-8 md:py-16">
         <div className="grid grid-cols-1 gap-14 md:grid-cols-[0.95fr_1.05fr] md:gap-16">
-          {/* Left pink big copy */}
           <div className="space-y-10">
             {leftPink.map((p, i) => (
               <p
@@ -149,12 +145,13 @@ function Section3Steps({ leftPink = [], steps = [] }) {
             ))}
           </div>
 
-          {/* Right numbered steps */}
           <div className="space-y-12">
             {steps.map((s, i) => (
               <div key={i} className="text-[black]">
                 <p className="text-[1.2rem] font-extrabold leading-[1.35] md:text-[1.25rem]">
-                  <span className="text-[black]">{i + 1}. {s.title}</span>{" "}
+                  <span className="text-[black]">
+                    {i + 1}. {s.title}
+                  </span>{" "}
                   <span className="font-normal">{s.body}</span>
                 </p>
               </div>
@@ -189,17 +186,17 @@ function Section4Cta({
             {primaryCta?.href ? (
               <a
                 href={primaryCta.href}
-                className="inline-flex w-full max-w-[420px] items-center justify-center gap-3 rounded-[8px] bg-[black] px-8 py-4 text-sm font-extrabold uppercase tracking-wide text-white md:w-auto"
+                className={`${buttonClasses.secondary} w-full max-w-[420px] gap-3 md:w-auto`}
               >
                 {primaryCta.label}
-                <ArrowUpRight className="h-5 w-5" />
+                <ButtonArrowUpRight />
               </a>
-            ) : null}
+              ) : null}
 
             {secondaryCta?.href ? (
               <a
                 href={secondaryCta.href}
-                className="inline-flex w-full max-w-[420px] items-center justify-center gap-3 rounded-[8px] bg-[#f75a05] px-8 py-4 text-sm font-extrabold tracking-wide text-white md:w-auto"
+                className={`${buttonClasses.primary} w-full max-w-[420px] gap-3 md:w-auto`}
               >
                 <PhoneIcon className="h-5 w-5" />
                 {secondaryCta.label}

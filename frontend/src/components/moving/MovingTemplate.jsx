@@ -1,10 +1,7 @@
-
-// ================================================
-// File: src/components/moving/MovingTemplate.jsx
-// Renders sections in screenshot order: 1 → 2 → 3 → 4 → 5
-// Checkmark style matches your WhyChooseSection.jsx (orange circle).
-// ================================================
+// src/components/moving/MovingTemplate.jsx
 import React from "react";
+import { buttonClasses } from "../../data/buttonClasses";
+import { ButtonArrowUpRight } from "../ui/ButtonIcons";
 
 export default function MovingTemplate({ data }) {
   return (
@@ -99,17 +96,11 @@ function Section2Hero({ bgImage, overlay, heading, cta, numbered = [] }) {
               </h2>
 
               {cta?.href ? (
-                <a
-                  href={cta.href}
-                  className="mt-10 inline-flex items-center justify-center rounded-full px-10 py-4 text-sm font-extrabold"
-                  style={{
-                    backgroundColor: cta.bg ?? "#ffe43a",
-                    color: cta.text ?? "#111111",
-                  }}
-                >
-                  {cta.label ?? "Get Quote"}
-                </a>
-              ) : null}
+                <a href={cta.href} className={`${buttonClasses.primary} mt-10 gap-2`}>
+              {cta.label ?? "Get Quote"}
+              <ButtonArrowUpRight />
+            </a>
+           ) : null}
             </div>
 
             <div className="space-y-6 md:space-y-7">

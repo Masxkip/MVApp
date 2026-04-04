@@ -1,9 +1,7 @@
-
-// ================================================
-// File: src/components/moving-location/MovingLocationTemplate.jsx
-// Adds: SplitAfterHeroSection after HeroBanner.
-// ================================================
+// src/components/moving-location/MovingLocationTemplate.jsx
 import React from "react";
+import { buttonClasses } from "../../data/buttonClasses";
+import { ButtonArrowUpRight } from "../ui/ButtonIcons";
 
 export default function MovingLocationTemplate({ location }) {
   return (
@@ -114,11 +112,9 @@ function HeroBanner({ bgImage, overlay, heading, paragraph, cta }) {
             </p>
 
             {cta?.href ? (
-              <a
-                href={cta.href}
-                className="mt-8 inline-flex items-center justify-center rounded-[6px] bg-[#f75a05] px-10 py-4 text-sm font-bold uppercase tracking-wide text-white hover:bg-black"
-              >
-                {cta.label ?? "GET A QUOTE"}
+             <a href={cta.href} className={`${buttonClasses.primary} mt-10 gap-2`}>
+                {cta.label ?? "Get Quote"}
+                <ButtonArrowUpRight />
               </a>
             ) : null}
           </div>
@@ -128,7 +124,6 @@ function HeroBanner({ bgImage, overlay, heading, paragraph, cta }) {
   );
 }
 
-// NEW: After-hero split (Text LEFT, Image RIGHT, smaller image)
 function SplitAfterHeroSection({
   image,
   accent,
@@ -148,7 +143,6 @@ function SplitAfterHeroSection({
     <section className="w-full bg-white">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-8 md:py-16">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1fr_1fr] md:gap-14">
-          {/* Text LEFT */}
           <div className="md:order-1">
             <h2 className="whitespace-pre-line text-[2.05rem] font-extrabold leading-[1.05] text-[black] md:text-[3.05rem]">
               {heading}
@@ -166,7 +160,6 @@ function SplitAfterHeroSection({
             </div>
           </div>
 
-          {/* Image RIGHT (smaller) */}
           <div className="relative md:order-2">
             <div
               className="absolute rounded-[22px]"

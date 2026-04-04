@@ -1,7 +1,7 @@
-// ================================
-// File: src/pages/Contact.jsx
-// ================================
+// src/pages/Contact.jsx
 import { useMemo, useState } from "react";
+import { buttonClasses } from "../data/buttonClasses";
+import { ButtonArrowUpRight } from "../components/ui/ButtonIcons";
 
 function classNames(...parts) {
   return parts.filter(Boolean).join(" ");
@@ -95,13 +95,9 @@ export default function Contact() {
 
   return (
     <main className="w-full bg-[white] font-brand text-white">
-      {/* =======================
-          TOP: CORPORATE CONTACT
-         ======================= */}
       <section className="w-full bg-[white]">
         <div className="mx-auto max-w-7xl px-4 py-10 md:px-8 md:py-14">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_360px] lg:gap-12">
-            {/* Left */}
             <div>
               <h1 className="text-[2.03rem] font-extrabold text-black md:text-[3.3rem]">
                 CORPORATE CONTACT
@@ -144,7 +140,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Right CTA */}
             <aside className="relative">
               <div className="rounded-2xl bg-[#f75a05] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] ring-1 ring-white/10 md:p-7">
                 <h2 className="text-center text-[1.35rem] font-extrabold leading-[1.15] tracking-[-0.02em] text-white md:text-[1.55rem]">
@@ -174,10 +169,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* =======================
-          FORM: CONTACT US
-         ======================= */}
-         
       <section id="contact-form" className="w-full bg-[white]">
         <div className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-0">
           <div className="max-w-3xl">
@@ -203,7 +194,6 @@ export default function Contact() {
                 </div>
               ) : null}
 
-              {/* ABOUT */}
               <div className="mb-5">
                 <label className={labelBase} htmlFor="about">
                   ABOUT {req}
@@ -228,7 +218,6 @@ export default function Contact() {
                 ) : null}
               </div>
 
-              {/* NAME */}
               <div className="mb-5">
                 <label className={labelBase} htmlFor="name">
                   YOUR NAME {req}
@@ -253,7 +242,6 @@ export default function Contact() {
                 ) : null}
               </div>
 
-              {/* EMAIL */}
               <div className="mb-5">
                 <label className={labelBase} htmlFor="email">
                   YOUR EMAIL {req}
@@ -278,7 +266,6 @@ export default function Contact() {
                 ) : null}
               </div>
 
-              {/* PHONE */}
               <div className="mb-5">
                 <label className={labelBase} htmlFor="phone">
                   PHONE NUMBER
@@ -294,7 +281,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* SMS OPT-IN */}
               <div className="mb-6 flex items-start gap-3">
                 <input
                   id="smsOptIn"
@@ -310,7 +296,6 @@ export default function Contact() {
                 </label>
               </div>
 
-              {/* MESSAGE */}
               <div className="mb-6">
                 <label className={labelBase} htmlFor="message">
                   MESSAGE {req}
@@ -334,19 +319,19 @@ export default function Contact() {
               </div>
 
               <div className="flex justify-start">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={classNames(
-                    "rounded-xl bg-[#f75a05] px-7 py-3 text-center font-brand text-[1.15rem] uppercase text-white",
-                    "transition-transform duration-150 hover:scale-[1.01]",
-                    isSubmitting && "opacity-70"
-                  )}
-                >
-                  {isSubmitting ? "Sending..." : "Contact"}
-                </button>
-              </div>
-            
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={classNames(
+                  buttonClasses.primary,
+                  "gap-1",
+                  isSubmitting && "cursor-not-allowed opacity-70"
+                )}
+              >
+                {isSubmitting ? "Sending..." : "Contact"}
+                {!isSubmitting ? <ButtonArrowUpRight /> : null}
+              </button>
+            </div>                       
             </form>
             <br />
           </div>

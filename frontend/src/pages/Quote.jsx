@@ -1,8 +1,10 @@
-// File: src/pages/Quote.jsx
+// src/pages/Quote.jsx
 import { useMemo, useState } from "react";
 import PageHero from "../components/hero/PageHero";
 import { postQuote } from "../lib/api";
 import ServiceSection from "../components/home/ServiceSection";
+import { buttonClasses } from "../data/buttonClasses";
+import { ButtonArrowUpRight } from "../components/ui/ButtonIcons";
 
 const MOVE_TYPES = [
   { value: "", label: "Choose an option" },
@@ -491,7 +493,10 @@ export default function Quote() {
               />
             </Field>
             <Field label="Phone number" required>
-              <Input value={form.phone} onChange={(e) => update("phone", e.target.value)} />
+              <Input
+                value={form.phone}
+                onChange={(e) => update("phone", e.target.value)}
+              />
             </Field>
           </div>
 
@@ -612,12 +617,13 @@ export default function Quote() {
               type="submit"
               disabled={isSubmitting}
               className={classNames(
-                "rounded-xl bg-[#050504] px-7 py-3 text-center font-brand text-[1.15rem] uppercase text-white",
-                "transition-transform duration-150 hover:scale-[1.01] hover:bg-[#f75a05]",
-                isSubmitting && "opacity-70"
+                buttonClasses.secondary,
+                "gap-2",
+                isSubmitting && "cursor-not-allowed opacity-70"
               )}
             >
               {isSubmitting ? "Sending..." : "Get My Quote"}
+              {!isSubmitting ? <ButtonArrowUpRight /> : null}
             </button>
 
             {serverMsg ? (

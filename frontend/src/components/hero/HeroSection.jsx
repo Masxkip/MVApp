@@ -1,8 +1,8 @@
-// ================================================
-// File: src/components/home/HeroSection.jsx
-// ================================================
+// src/components/home/HeroSection.jsx
 import { NavLink } from "react-router-dom";
 import heroBg from "../../assets/v/v3.jpg";
+import { buttonClasses } from "../../data/buttonClasses";
+import { ButtonArrowUpRight } from "../ui/ButtonIcons";
 
 const STATS = [
   {
@@ -25,7 +25,6 @@ const STATS = [
   },
 ];
 
-
 function UnderlineAccent() {
   return (
     <span
@@ -42,25 +41,21 @@ function UnderlineAccent() {
 function StatsBand() {
   return (
     <section className="w-full bg-[#050504] font-brand">
-      {/* Mobile smaller, desktop unchanged */}
       <div className="mx-auto max-w-7xl px-5 py-1 md:px-8 md:py-14">
         <div className="grid gap-7 text-center md:grid-cols-3 md:gap-10">
           {STATS.map((s) => (
             <div key={s.title} className="mx-auto max-w-sm">
               <div className="relative mx-auto inline-flex items-center justify-center">
-                {/* Mobile smaller, desktop your original */}
                 <div className="relative font-brand text-[2.22rem] font-extrabold tracking-wide text-white md:text-[3.5rem]">
                   {s.value}
                   {s.underline ? <UnderlineAccent /> : null}
                 </div>
               </div>
 
-              {/* Mobile smaller, desktop your original */}
               <h3 className="mt-2 font-brand text-[1.06rem] font-extrabold uppercase tracking-wide text-white md:mt-5 md:text-xl">
                 {s.title}
               </h3>
 
-              {/* Mobile smaller, desktop your original */}
               <p className="mt-1 text-[1.01rem] leading-relaxed text-white/90 md:mt-3 md:text-[1.08rem]">
                 {s.desc}
               </p>
@@ -97,19 +92,10 @@ export default function HeroSection() {
               Reliable, Affordable & Customer Approved!
             </p>
 
-            <div className="mt-10">
-              <NavLink
-              to="/contact"
-              className={[
-                "inline-flex items-center justify-center",
-                "rounded-xl bg-[#f75a05] px-7 py-3",
-                "text-center font-brand text-[1.15rem] font-bold uppercase tracking-wide text-black",
-                "transition-transform duration-150 hover:scale-[1.01] hover:bg-[white] hover:text-black",
-                "active:scale-[0.99]",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40",
-              ].join(" ")}
-            >
+            <div className="mt-8">
+            <NavLink to="/contact" className={`${buttonClasses.primary} gap-2`}>
               Free Quote
+              <ButtonArrowUpRight />
             </NavLink>
             </div>
           </div>
