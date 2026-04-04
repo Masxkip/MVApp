@@ -3,6 +3,8 @@
 // ================================
 import { useEffect, useId, useState } from "react";
 import { Link } from "react-router-dom";
+import { buttonClasses } from "../../data/buttonClasses";
+import { ButtonArrowUpRight } from "../ui/ButtonIcons";
 
 /**
  * @param {object} props
@@ -129,12 +131,13 @@ export default function OurServiceCard({
             {description}
           </p>
 
-          {href ? (
+         {href ? (
             <Link
               to={href}
-              className="mt-auto mx-auto flex min-h-[58px] w-full max-w-[240px] items-center justify-center border border-[black] bg-black px-6 py-3 text-center text-[1.05rem] font-bold text-[white] transition duration-200  md:mt-8 md:text-[1.1rem]"
+              className={`${buttonClasses.outline} mt-auto mx-auto hidden gap-2 md:inline-flex md:mt-8`}
             >
               {linkLabel}
+              <ButtonArrowUpRight />
             </Link>
           ) : (
             <div className="mt-auto h-[58px] md:mt-8" aria-hidden="true" />

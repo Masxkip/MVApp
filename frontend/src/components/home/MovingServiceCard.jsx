@@ -1,5 +1,7 @@
 // File: src/components/sections/MovingServiceCard.jsx
 import { Link } from "react-router-dom";
+import { buttonClasses } from "../../data/buttonClasses";
+import { ButtonArrowUpRight } from "../ui/ButtonIcons";
 
 export default function MovingServiceCard({ service }) {
   return (
@@ -25,12 +27,10 @@ export default function MovingServiceCard({ service }) {
           {service.description}
         </p>
 
-        <div className="mt-auto pt-5">
-          <Link
-            to={service.link}
-            className="mx-auto flex h-[54px] w-full max-w-[280px] items-center justify-center border border-[black] bg-black text-[1rem] font-medium text-[white] transition duration-200"
-          >
+        <div className="mt-auto flex justify-center pt-5">
+          <Link to={service.link} className={`${buttonClasses.outline} gap-1`}>
             Learn More
+            <ButtonArrowUpRight />
           </Link>
         </div>
       </div>
