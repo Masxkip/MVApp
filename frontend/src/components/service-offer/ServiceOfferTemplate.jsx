@@ -214,8 +214,8 @@ function PinkCheck({ className = "" }) {
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
         d="M20 6L9 17l-5-5"
-        stroke="#ff3aa6"
-        strokeWidth="2.8"
+        stroke="#f75a05"
+        strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

@@ -15,7 +15,7 @@ export default function MovingServiceCard({ service }) {
           draggable={false}
           className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
         />
-        <div className="absolute inset-0 bg-[black]/35" />
+        <div className="absolute inset-0 bg-[black]/45" />
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
