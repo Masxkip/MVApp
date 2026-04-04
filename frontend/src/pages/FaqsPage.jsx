@@ -1,5 +1,7 @@
-// src/pages/FaqsPage.jsx
 import React, { useMemo, useState, useId } from "react";
+
+const ACCORDION_DURATION = "duration-400";
+const ACCORDION_EASING = "ease-out";
 
 export default function FaqsPage() {
   const faqGroups = useMemo(
@@ -205,7 +207,7 @@ function FaqTopicBlock({ topic, items, groupIndex }) {
 
                 <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black">
                   <ArrowIcon
-                    className={`h-5 w-5 text-white transition-transform duration-300 ${
+                    className={`h-5 w-5 text-white transition-transform ${ACCORDION_DURATION} ${ACCORDION_EASING} ${
                       isOpen ? "rotate-180" : "rotate-0"
                     }`}
                   />
@@ -216,16 +218,14 @@ function FaqTopicBlock({ topic, items, groupIndex }) {
                 id={panelId}
                 role="region"
                 aria-labelledby={buttonId}
-                className={`grid overflow-hidden transition-all duration-300 ease-in-out ${
-                  isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                className={`overflow-hidden transition-[max-height,opacity,margin-top] ${ACCORDION_DURATION} ${ACCORDION_EASING} ${
+                  isOpen ? "mt-4 max-h-[520px] opacity-100" : "mt-0 max-h-0 opacity-0"
                 }`}
               >
-                <div className="min-h-0">
-                  <div className="px-6 pb-5 pt-0">
-                    <p className="text-[1.09rem] leading-[1.6] text-black md:text-[1.1rem]">
-                      {item.answer}
-                    </p>
-                  </div>
+                <div className="px-6 pb-5 pt-0">
+                  <p className="text-[1.09rem] leading-[1.6] text-black md:text-[1.1rem]">
+                    {item.answer}
+                  </p>
                 </div>
               </div>
             </div>

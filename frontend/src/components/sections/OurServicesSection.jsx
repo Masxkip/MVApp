@@ -1,7 +1,5 @@
-// ================================
-// File: src/components/sections/OurServicesSection.jsx
-// ================================
-import React from "react";
+// src/components/sections/OurServicesSection.jsx
+import React, { useState } from "react";
 import OurServiceCard from "./OurServiceCard";
 import { OUR_SERVICES } from "../../data/ourServices";
 
@@ -18,6 +16,8 @@ export default function OurServicesSection({
   services = OUR_SERVICES,
   maxWidthClass = "max-w-7xl",
 }) {
+  const [openIndex, setOpenIndex] = useState(0);
+
   return (
     <section className="w-full bg-white font-brand">
       <div className="px-4 pt-2 pb-10 md:px-8 md:pt-4 md:pb-14">
@@ -25,7 +25,7 @@ export default function OurServicesSection({
           {(title || description) && (
             <header>
               {title ? (
-                <h2 className="text-[2.03rem] font-extrabold leading-[1.05]  text-[black] md:text-[3.3rem]">
+                <h2 className="text-[2.03rem] font-extrabold leading-[1.05] text-[black] md:text-[3.3rem]">
                   {title}
                 </h2>
               ) : null}
@@ -48,7 +48,10 @@ export default function OurServicesSection({
                 linkLabel={service.linkLabel}
                 imageSrc={service.imageSrc}
                 imageAlt={service.imageAlt}
-                defaultOpen={idx === 0}
+                open={openIndex === idx}
+                onToggle={() =>
+                  setOpenIndex((prev) => (prev === idx ? -1 : idx))
+                }
               />
             ))}
           </div>

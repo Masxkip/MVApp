@@ -1,17 +1,5 @@
-// ================================================
-// File: src/components/sections/NoSurpriseFeeSection.jsx
-// Reusable “No Surprise Fees” section.
-// Update: Colors normalized (#050504, #f75a05, #ffffff), image accent removed,
-//         accordion animation smoothed (max-height + opacity).
-// ================================================
-import React, {
-  useEffect,
-  useId,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
-import { ChevronDown } from "lucide-react";
+// src/components/sections/NoSurpriseFeeSection.jsx
+import React, { useEffect, useId, useMemo, useRef, useState } from "react";
 import guaranteedImg from "../../assets/v/v4.jpg";
 
 const COLORS = {
@@ -20,7 +8,8 @@ const COLORS = {
   white: "#ffffff",
 };
 
-const ACCORDION_MS = 550;
+const ACCORDION_DURATION = "duration-500";
+const ACCORDION_EASING = "ease-out";
 
 export default function NoSurpriseFeeSection({
   bgClass = "bg-white",
@@ -64,7 +53,11 @@ export default function NoSurpriseFeeSection({
       {
         title:
           "No hidden extras, our travel and labor expenses are included in your flat fee price",
-        points: ["Labor time included", "Travel time included", "No surprise add-ons"],
+        points: [
+          "Labor time included",
+          "Travel time included",
+          "No surprise add-ons",
+        ],
       },
     ],
   },
@@ -76,19 +69,19 @@ export default function NoSurpriseFeeSection({
 }) {
   const items = useMemo(() => normalizeItems(right?.items ?? []), [right?.items]);
   const baseId = useId();
+  const panelRefs = useRef([]);
 
-  const allowMultipleOpen = Boolean(accordion?.allowMultipleOpen);
   const enabled = Boolean(accordion?.enabled);
+  const allowMultipleOpen = Boolean(accordion?.allowMultipleOpen);
 
   const [openSet, setOpenSet] = useState(() => {
     const idx = Number.isInteger(accordion?.defaultOpenIndex)
       ? accordion.defaultOpenIndex
       : -1;
+
     if (!enabled || idx < 0) return new Set();
     return new Set([idx]);
   });
-
-  const panelRefs = useRef([]);
 
   useEffect(() => {
     const idx = Number.isInteger(accordion?.defaultOpenIndex)
@@ -104,15 +97,23 @@ export default function NoSurpriseFeeSection({
   }, [accordion?.defaultOpenIndex, enabled]);
 
   useEffect(() => {
-    // Re-sync heights on open/close, and after layout changes.
-    for (let i = 0; i < items.length; i += 1) {
-      const el = panelRefs.current[i];
-      if (!el) continue;
-      const isOpen = openSet.has(i);
-      el.style.maxHeight = isOpen ? `${el.scrollHeight}px` : "0px";
-      el.style.opacity = isOpen ? "1" : "0";
-    }
-  }, [items.length, openSet]);
+    const syncHeights = () => {
+      for (let i = 0; i < items.length; i += 1) {
+        const el = panelRefs.current[i];
+        if (!el) continue;
+
+        const isOpen = openSet.has(i);
+        el.style.maxHeight = isOpen ? `${el.scrollHeight}px` : "0px";
+      }
+    };
+
+    syncHeights();
+    window.addEventListener("resize", syncHeights);
+
+    return () => {
+      window.removeEventListener("resize", syncHeights);
+    };
+  }, [items, openSet]);
 
   function toggleIndex(idx) {
     if (!enabled) return;
@@ -127,8 +128,8 @@ export default function NoSurpriseFeeSection({
         return next;
       }
 
-      if (isOpen) return new Set(); // close all
-      return new Set([idx]); // open only this
+      if (isOpen) return new Set();
+      return new Set([idx]);
     });
   }
 
@@ -136,7 +137,6 @@ export default function NoSurpriseFeeSection({
     <section className={`w-full font-brand ${bgClass}`}>
       <div className={containerClass}>
         <div className={`mx-auto ${maxWidthClass}`}>
-          {/* Row 1: Heading left + Image right */}
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1.05fr_0.95fr] md:gap-14">
             <div>
               <h2
@@ -149,8 +149,7 @@ export default function NoSurpriseFeeSection({
               </h2>
             </div>
 
-            {/* Image accent removed */}
-            <div className="relative overflow-hidden rounded-[22px] bg-white ring-5 ring-black/90">
+            <div className="relative overflow-hidden rounded-[22px] bg-white ring-[4px] ring-black md:ring-[6px]">
               {image?.src ? (
                 <img
                   src={image.src}
@@ -165,7 +164,6 @@ export default function NoSurpriseFeeSection({
             </div>
           </div>
 
-          {/* Row 2: Left accent paragraph + Right accordion */}
           <div className="mt-14 grid grid-cols-1 items-start gap-10 md:mt-16 md:grid-cols-[0.95fr_1.05fr] md:gap-14">
             <div>
               <p
@@ -189,13 +187,13 @@ export default function NoSurpriseFeeSection({
               <div className="mt-7 divide-y divide-black/10 md:mt-9">
                 {items.map((item, idx) => {
                   const isOpen = enabled ? openSet.has(idx) : false;
-                  const btnId = `${baseId}-btn-${idx}`;
+                  const buttonId = `${baseId}-btn-${idx}`;
                   const panelId = `${baseId}-panel-${idx}`;
 
                   return (
-                    <div key={item.key} className="py-4 md:py-5">
+                    <div key={item.key} className="py-5">
                       <button
-                        id={btnId}
+                        id={buttonId}
                         type="button"
                         className={`flex w-full items-start justify-between gap-6 text-left ${
                           enabled ? "cursor-pointer" : "cursor-default"
@@ -205,22 +203,17 @@ export default function NoSurpriseFeeSection({
                         onClick={() => toggleIndex(idx)}
                       >
                         <span
-                          className="text-[1.15rem] font-extrabold leading-[1.35] md:text-[1.25rem]"
+                          className="text-[1.09rem] font-extrabold leading-[1.25] md:text-[1.1rem]"
                           style={{ color: COLORS.ink }}
                         >
                           {item.title}
                         </span>
 
-                        <span className="mt-[0.25rem] inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full">
-                          <ChevronDown
-                            className={`h-8 w-8 transition-transform`}
-                            style={{
-                              color: COLORS.accent,
-                              transitionDuration: `${ACCORDION_MS}ms`,
-                            }}
-                            strokeWidth={3.2}
-                            aria-hidden="true"
-                            data-open={enabled && isOpen ? "true" : "false"}
+                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center">
+                          <ArrowIcon
+                            className={`h-5 w-5 transition-transform ${ACCORDION_DURATION} ${ACCORDION_EASING} ${
+                              isOpen ? "rotate-180" : "rotate-0"
+                            }`}
                           />
                         </span>
                       </button>
@@ -228,75 +221,63 @@ export default function NoSurpriseFeeSection({
                       <div
                         id={panelId}
                         role="region"
-                        aria-labelledby={btnId}
+                        aria-labelledby={buttonId}
                         ref={(el) => {
                           panelRefs.current[idx] = el;
-                          if (!el) return;
-                          // Ensure correct initial state
-                          el.style.maxHeight = isOpen ? `${el.scrollHeight}px` : "0px";
-                          el.style.opacity = isOpen ? "1" : "0";
                         }}
-                        className="overflow-hidden"
-                        style={{
-                          marginTop: isOpen ? "1rem" : "0rem",
-                          transitionProperty: "max-height, opacity, margin-top",
-                          transitionDuration: `${ACCORDION_MS}ms`,
-                          transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
-                          willChange: "max-height, opacity, margin-top",
-                        }}
+                        className={`overflow-hidden transition-[max-height,opacity,margin-top] ${ACCORDION_DURATION} ${ACCORDION_EASING} ${
+                          isOpen ? "mt-4 opacity-100" : "mt-0 opacity-0"
+                        }`}
+                        style={{ maxHeight: isOpen ? undefined : "0px" }}
                       >
-                        <div className="pt-0">
-                          {item.points?.length ? (
-                            <ul className="space-y-3">
-                              {item.points.map((p, pIdx) => (
-                                <li key={`${item.key}-p-${pIdx}`} className="flex items-start gap-4">
-                                  <span
-                                    className="mt-[0.15rem] inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
-                                    style={{ backgroundColor: COLORS.accent }}
-                                  >
-                                    <CheckIcon className="h-3.5 w-3.5 text-white" />
-                                  </span>
-                                  <p
-                                    className="text-[1.05rem] leading-[1.7] md:text-[1.08rem]"
-                                    style={{ color: "rgba(5,5,4,0.8)" }}
-                                  >
-                                    {p}
-                                  </p>
-                                </li>
-                              ))}
-                            </ul>
-                          ) : item.body ? (
-                            <p
-                              className="text-[1.05rem] leading-[1.8] md:text-[1.08rem]"
-                              style={{ color: "rgba(5,5,4,0.8)" }}
-                            >
-                              {item.body}
-                            </p>
-                          ) : (
-                            <p
-                              className="text-[1.05rem] leading-[1.8] md:text-[1.08rem]"
-                              style={{ color: "rgba(5,5,4,0.8)" }}
-                            >
-                              Included at no extra charge.
-                            </p>
-                          )}
+                        {item.points?.length ? (
+                          <ul className="space-y-3">
+                            {item.points.map((point, pointIdx) => (
+                              <li
+                                key={`${item.key}-point-${pointIdx}`}
+                                className="flex items-start gap-4"
+                              >
+                                <span
+                                  className="mt-[0.15rem] inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
+                                  style={{ backgroundColor: COLORS.accent }}
+                                >
+                                  <CheckIcon className="h-3.5 w-3.5 text-white" />
+                                </span>
 
-                          {item.note ? (
-                            <p
-                              className="mt-4 text-[0.88rem] font-bold leading-[1.6] md:text-[0.95rem]"
-                              style={{ color: "rgba(5,5,4,0.65)" }}
-                            >
-                              {item.note}
-                            </p>
-                          ) : null}
-                        </div>
+                                <p
+                                  className="text-[1.09rem] leading-[1.6] md:text-[1.1rem]"
+                                  style={{ color: "rgba(5,5,4,0.8)" }}
+                                >
+                                  {point}
+                                </p>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : item.body ? (
+                          <p
+                            className="text-[1.09rem] leading-[1.6] md:text-[1.1rem]"
+                            style={{ color: "rgba(5,5,4,0.8)" }}
+                          >
+                            {item.body}
+                          </p>
+                        ) : (
+                          <p
+                            className="text-[1.09rem] leading-[1.6] md:text-[1.1rem]"
+                            style={{ color: "rgba(5,5,4,0.8)" }}
+                          >
+                            Included at no extra charge.
+                          </p>
+                        )}
+
+                        {item.note ? (
+                          <p
+                            className="mt-4 text-[0.88rem] font-bold leading-[1.6] md:text-[0.95rem]"
+                            style={{ color: "rgba(5,5,4,0.65)" }}
+                          >
+                            {item.note}
+                          </p>
+                        ) : null}
                       </div>
-
-                      {/* Rotate chevron via attribute selector (Tailwind-free) */}
-                      <style>{`
-                        [data-open="true"] { transform: rotate(180deg); }
-                        [data-open="false"] { transform: rotate(0deg); }
-                      `}</style>
                     </div>
                   );
                 })}
@@ -336,6 +317,26 @@ function normalizeItems(items) {
   }
 
   return out;
+}
+
+function ArrowIcon({ className = "" }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      style={{ color: COLORS.ink }}
+    >
+      <path
+        d="M6 9l6 6 6-6"
+        stroke="currentColor"
+        strokeWidth="2.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
 }
 
 function CheckIcon({ className = "" }) {

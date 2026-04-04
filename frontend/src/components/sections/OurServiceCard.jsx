@@ -1,7 +1,5 @@
-// ================================
-// File: src/components/sections/OurServiceCard.jsx
-// ================================
-import { useEffect, useId, useState } from "react";
+// src/components/sections/OurServiceCard.jsx
+import { useId, useState } from "react";
 import { Link } from "react-router-dom";
 import { buttonClasses } from "../../data/buttonClasses";
 import { ButtonArrowUpRight } from "../ui/ButtonIcons";
@@ -15,11 +13,13 @@ import { ButtonArrowUpRight } from "../ui/ButtonIcons";
  * @param {string=} props.imageSrc
  * @param {string=} props.imageAlt
  * @param {boolean=} props.defaultOpen
+ * @param {boolean=} props.open
+ * @param {() => void=} props.onToggle
  */
 function Chevron({ open }) {
   return (
     <svg
-      className={`h-5 w-5 text-black transition-transform duration-300 ${
+      className={`h-5 w-5 text-black transition-transform duration-500 ${
         open ? "rotate-180" : ""
       }`}
       viewBox="0 0 24 24"
@@ -45,13 +45,22 @@ export default function OurServiceCard({
   imageSrc,
   imageAlt = "",
   defaultOpen = false,
+  open: controlledOpen,
+  onToggle,
 }) {
   const contentId = useId();
-  const [open, setOpen] = useState(defaultOpen);
+  const isControlled = typeof controlledOpen === "boolean";
+  const [internalOpen, setInternalOpen] = useState(defaultOpen);
+  const open = isControlled ? controlledOpen : internalOpen;
 
-  useEffect(() => {
-    setOpen(defaultOpen);
-  }, [defaultOpen]);
+  function handleToggle() {
+    if (isControlled) {
+      onToggle?.();
+      return;
+    }
+
+    setInternalOpen((prev) => !prev);
+  }
 
   return (
     <article className="w-full font-brand">
@@ -62,7 +71,7 @@ export default function OurServiceCard({
             className="group flex w-full items-center justify-between text-left"
             aria-expanded={open}
             aria-controls={contentId}
-            onClick={() => setOpen((v) => !v)}
+            onClick={handleToggle}
           >
             <div className="flex min-w-0 items-center gap-1">
               {imageSrc ? (
@@ -70,13 +79,13 @@ export default function OurServiceCard({
                   <img
                     src={imageSrc}
                     alt={imageAlt || title}
-                    className="max-h-full max-w-full scale-[1.7] object-contain transition duration-300"
+                    className="max-h-full max-w-full scale-[1.7] object-contain transition duration-500"
                     draggable={false}
                   />
                 </div>
               ) : null}
 
-              <h3 className="min-w-0 text-[1.35rem] font-extrabold leading-[1.1] tracking-tight text-black transition duration-300 group-hover:text-[#f75a05]">
+              <h3 className="min-w-0 text-[1.35rem] font-extrabold leading-[1.1] tracking-tight text-black transition duration-500 group-hover:text-[#f75a05]">
                 {title}
               </h3>
             </div>
@@ -86,7 +95,7 @@ export default function OurServiceCard({
 
           <div
             id={contentId}
-            className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${
+            className={`overflow-hidden transition-[max-height,opacity,margin-top] duration-500 ease-out ${
               open ? "mt-3 max-h-[520px] opacity-100" : "mt-0 max-h-0 opacity-0"
             }`}
           >
@@ -97,7 +106,7 @@ export default function OurServiceCard({
             {href ? (
               <Link
                 to={href}
-                className="mt-5 block w-fit mx-auto text-[1.05rem] font-bold text-[#f75a05] underline-offset-4 transition duration-200 hover:underline md:text-[1.1rem]"
+                className="mx-auto mt-5 block w-fit text-[1.05rem] font-bold text-[#f75a05] underline-offset-4 transition duration-500 hover:underline md:text-[1.1rem]"
               >
                 {linkLabel}
               </Link>
@@ -106,7 +115,7 @@ export default function OurServiceCard({
         </div>
       </div>
 
-      <div className="group hidden h-full rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/5 md:flex md:flex-col">
+      <div className="group hidden h-full rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/5 sm:p-7 md:flex md:flex-col">
         <div className="flex flex-1 flex-col">
           {imageSrc ? (
             <div className="mb-5 grid place-items-center">
@@ -117,13 +126,13 @@ export default function OurServiceCard({
                   loading="lazy"
                   decoding="async"
                   draggable={false}
-                  className="h-full w-full select-none scale-[1.28] object-contain transition duration-300 group-hover:scale-[1.33]"
+                  className="h-full w-full select-none scale-[1.28] object-contain transition duration-500 group-hover:scale-[1.33]"
                 />
               </div>
             </div>
           ) : null}
 
-          <h3 className="text-center text-[1.35rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-black transition duration-300 group-hover:text-[#f75a05] md:text-[1.7rem] md:tracking-[-0.035em]">
+          <h3 className="text-center text-[1.35rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-black transition duration-500 group-hover:text-[#f75a05] md:text-[1.7rem] md:tracking-[-0.035em]">
             {title}
           </h3>
 
@@ -131,10 +140,10 @@ export default function OurServiceCard({
             {description}
           </p>
 
-         {href ? (
+          {href ? (
             <Link
               to={href}
-              className={`${buttonClasses.outline} mt-auto mx-auto hidden gap-2 md:inline-flex md:mt-8`}
+              className={`${buttonClasses.outline} mx-auto mt-auto hidden gap-2 md:mt-8 md:inline-flex`}
             >
               {linkLabel}
               <ButtonArrowUpRight />

@@ -1,6 +1,8 @@
-// src/components/sections/FAQSection.jsx
 import React, { useId, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+
+const ACCORDION_DURATION = "duration-400";
+const ACCORDION_EASING = "ease-out";
 
 /**
  * FAQSection
@@ -14,13 +16,11 @@ import { Link } from "react-router-dom";
  */
 export default function FAQSection({
   title = "Frequently asked questions about relocating in Vancouver",
-
   faqs,
   defaultOpenIndex = 0,
   variant = "light",
 }) {
   const isDark = variant === "dark";
-
 
   const defaultFaqs = useMemo(
     () => [
@@ -43,7 +43,6 @@ export default function FAQSection({
     []
   );
 
-
   const resolvedFaqs = faqs?.length ? faqs : defaultFaqs;
 
   return (
@@ -61,7 +60,6 @@ export default function FAQSection({
             View more Faqs.
           </Link>
 
-          
           <div className="mt-8 space-y-5">
             <FAQAccordion items={resolvedFaqs} defaultOpenIndex={defaultOpenIndex} />
           </div>
@@ -87,7 +85,7 @@ function FAQAccordion({ items, defaultOpenIndex = 0 }) {
         return (
           <div
             key={`${idx}-${item.question}`}
-            className="overflow-hidden rounded-[10px] border border-black bg-white/1000]"
+            className="overflow-hidden rounded-[10px] border border-black bg-white"
           >
             <button
               id={buttonId}
@@ -95,11 +93,7 @@ function FAQAccordion({ items, defaultOpenIndex = 0 }) {
               aria-expanded={isOpen}
               aria-controls={panelId}
               onClick={() => setOpenIndex(isOpen ? -1 : idx)}
-              className="
-                flex w-full items-center justify-between gap-4
-                px-6 py-5
-                text-left
-              "
+              className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
             >
               <span className="text-[1.09rem] font-extrabold leading-[1.2] text-black md:text-[1.1rem]">
                 {item.question}
@@ -107,7 +101,7 @@ function FAQAccordion({ items, defaultOpenIndex = 0 }) {
 
               <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black">
                 <ArrowIcon
-                  className={`h-5 w-5 text-white transition-transform duration-200 ${
+                  className={`h-5 w-5 text-white transition-transform ${ACCORDION_DURATION} ${ACCORDION_EASING} ${
                     isOpen ? "rotate-180" : "rotate-0"
                   }`}
                 />
@@ -118,7 +112,9 @@ function FAQAccordion({ items, defaultOpenIndex = 0 }) {
               id={panelId}
               role="region"
               aria-labelledby={buttonId}
-              className={isOpen ? "block" : "hidden"}
+              className={`overflow-hidden transition-[max-height,opacity,margin-top] ${ACCORDION_DURATION} ${ACCORDION_EASING} ${
+                isOpen ? "mt-4 max-h-[520px] opacity-100" : "mt-0 max-h-0 opacity-0"
+              }`}
             >
               <div className="px-6 pb-5 pt-0">
                 <p className="text-[1.09rem] leading-[1.6] text-black md:text-[1.1rem]">

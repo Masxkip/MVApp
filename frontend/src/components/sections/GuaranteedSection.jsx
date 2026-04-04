@@ -3,7 +3,7 @@ import React, { useId, useMemo, useState } from "react";
 import guaranteedImg from "../../assets/v/v1.jpg";
 
 const ACCORDION_DURATION = "duration-500";
-const ACCORDION_EASING = "ease-out";
+const ACCORDION_EASING = "duration-500";
 
 export default function GuaranteedSection({
   pageTitle = "What’s included in our guaranteed services",
@@ -21,7 +21,7 @@ export default function GuaranteedSection({
           "Computers – Packed in cardboard box with protection",
           "Wardrobe Clothes – Hung in wardrobe box",
           "Mirrors – Packed in cardboard box with protection",
-          "Lamps – Disassembled, wrapped and packed in cardboard box with protection"
+          "Lamps – Disassembled, wrapped and packed in cardboard box with protection",
         ],
         note:
           "* Some services must be requested in advance but are included in Guaranteed Services quote prior to move",
@@ -75,16 +75,22 @@ export default function GuaranteedSection({
             {pageTitle}
           </h1>
 
-          <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-stretch md:gap-10">
-            <div className="h-full">
-              {/* Added “blank ring” + reduced height */}
-               <div className="h-[300px] overflow-hidden rounded-[14px] ring-7 ring-black md:h-full md:min-h-[440px]">
-                <img src={imageSrc} alt={imageAlt} className="h-full w-full object-cover" />
+          <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-start md:gap-10">
+            <div className="self-start">
+              <div className="h-[300px] overflow-hidden rounded-[14px] ring-[4px] ring-black md:h-[480px] md:ring-[6px]">
+                <img
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
 
-            <div className="h-full">
-              <Accordion items={resolvedItems} defaultOpenIndex={defaultOpenIndex} />
+            <div className="self-start">
+              <Accordion
+                items={resolvedItems}
+                defaultOpenIndex={defaultOpenIndex}
+              />
             </div>
           </div>
         </div>
@@ -129,7 +135,6 @@ function Accordion({ items, defaultOpenIndex = 0 }) {
               </span>
             </button>
 
-            {/* Slower + smoother: no hidden/block, animate max-height + opacity */}
             <div
               id={panelId}
               role="region"
