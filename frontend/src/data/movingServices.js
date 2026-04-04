@@ -1,10 +1,10 @@
 // File: src/data/movingServices.js
-import m1 from "../assets/m/m1.png";
-import m4 from "../assets/m/m4.png";
-import m5 from "../assets/m/m5.png";
-import m7 from "../assets/m/m7.png";
-import m8 from "../assets/m/m8.png";
-import m6 from "../assets/m/m6.png";
+import m1 from "../assets/v/d2.jpg";
+import m4 from "../assets/v/d2.jpg";
+import m5 from "../assets/v/d2.jpg";
+import m7 from "../assets/v/d2.jpg";
+import m8 from "../assets/v/d2.jpg";
+import m6 from "../assets/v/d2.jpg";
 
 const movingServices = [
   { id: 1, title: "24/7/365 Moving", description:

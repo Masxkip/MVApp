@@ -1,11 +1,11 @@
-// src/components/home/AboutIntroSection.jsx
+// File: src/components/home/AboutIntroSection.jsx
 import movingServices from "../../data/movingServices";
 import MovingServiceCard from "./MovingServiceCard";
 import heroLogo from "../../assets/hero.png";
 
 export default function AboutIntroSection() {
   return (
-    <section className="font-brand bg-[#ffffff] px-4 pt-5 pb-10 md:px-8 md:pt-7 md:pb-14">
+    <section className="bg-[#ffffff] px-4 pt-5 pb-10 font-brand md:px-8 md:pt-7 md:pb-14">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex flex-col items-center justify-center gap-4 text-center md:mb-10">
           <img
@@ -14,12 +14,12 @@ export default function AboutIntroSection() {
             className="h-14 w-14 object-contain md:h-20 md:w-20"
           />
 
-          <h1 className="text-[2.03rem] font-extrabold text-[#050504] md:text-[3.65rem]">
+          <h1 className="mt-5 text-[2.03rem] font-extrabold text-[#050504] md:mt-6 md:text-[3.65rem]">
             Vancouver Best Movers
           </h1>
         </div>
 
-        <div className="mb-6 md:mb-10">
+        <div className="mx-auto mt-6 max-w-6xl md:mt-8">
           <p className="text-center text-[1.09rem] leading-[1.6] text-black/80 md:text-[1.1rem]">
             We are a professional moving company dedicated to providing reliable,
             safe and efficient moving services for every customer. Our team
@@ -28,6 +28,13 @@ export default function AboutIntroSection() {
             apartment moves to long distance relocations, we bring experience,
             organization and professionalism to every move we complete.
           </p>
+        </div>
+
+        <div className="mx-auto mt-8 max-w-5xl text-center md:mt-10">
+          <h2 className="text-[1.3rem] font-extrabold leading-[1.1] text-[#050504] md:text-[1.65rem]">
+            Check out our core services that helps make your moving possible from
+            wherever, whenever.
+          </h2>
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-y-4 md:mt-14 md:grid-cols-2 md:gap-x-10 md:gap-y-10 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10">

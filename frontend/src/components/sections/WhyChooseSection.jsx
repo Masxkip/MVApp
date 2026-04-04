@@ -99,7 +99,7 @@ function Top({ heading, paragraphs }) {
 function Bottom({ heading, highlights, bullets, imageSrc, imageAlt }) {
   return (
     <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-10">
-      <div>
+      <div className="order-2 md:order-1">
         <h1 className="text-[2.03rem] font-extrabold leading-[1.05] text-black md:text-[3.3rem]">
           {heading}
         </h1>
@@ -129,8 +129,8 @@ function Bottom({ heading, highlights, bullets, imageSrc, imageAlt }) {
         </ul>
       </div>
 
-      <div>
-        <div className="overflow-hidden rounded-[18px] ring-7 ring-black">
+      <div className="order-1 md:order-2">
+        <div className="overflow-hidden rounded-[18px] ring-6 ring-black">
           <img
             src={imageSrc}
             alt={imageAlt}
@@ -144,6 +144,8 @@ function Bottom({ heading, highlights, bullets, imageSrc, imageAlt }) {
     </div>
   );
 }
+
+
 
 function CheckIcon({ className = "" }) {
   return (

@@ -64,11 +64,11 @@ export default function OurServiceCard({
           >
             <div className="flex min-w-0 items-center gap-1">
               {imageSrc ? (
-                <div className="flex h-10 w-10 items-center justify-center">
+                <div className="flex h-10 w-10 items-center justify-center overflow-hidden">
                   <img
                     src={imageSrc}
                     alt={imageAlt || title}
-                    className="max-h-full max-w-full object-contain"
+                    className="max-h-full max-w-full scale-[1.7] object-contain transition duration-300"
                     draggable={false}
                   />
                 </div>
@@ -104,40 +104,42 @@ export default function OurServiceCard({
         </div>
       </div>
 
-      <div className="group hidden rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/5 md:block">
-        {imageSrc ? (
-          <div className="mb-5 grid place-items-center">
-            <div className="h-32 w-32 sm:h-36 sm:w-36">
-              <img
-                src={imageSrc}
-                alt={imageAlt || title}
-                loading="lazy"
-                decoding="async"
-                draggable={false}
-                className="h-full w-full select-none object-contain transition duration-300 group-hover:scale-[1.03]"
-              />
+      <div className="group hidden h-full rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/5 md:flex md:flex-col">
+        <div className="flex flex-1 flex-col">
+          {imageSrc ? (
+            <div className="mb-5 grid place-items-center">
+              <div className="h-32 w-32 overflow-hidden sm:h-36 sm:w-36">
+                <img
+                  src={imageSrc}
+                  alt={imageAlt || title}
+                  loading="lazy"
+                  decoding="async"
+                  draggable={false}
+                  className="h-full w-full select-none scale-[1.28] object-contain transition duration-300 group-hover:scale-[1.33]"
+                />
+              </div>
             </div>
-          </div>
-        ) : null}
+          ) : null}
 
-        <h3 className="text-center text-[1.35rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-black transition duration-300 group-hover:text-[#f75a05] md:text-[1.7rem] md:tracking-[-0.035em]">
-          {title}
-        </h3>
+          <h3 className="text-center text-[1.35rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-black transition duration-300 group-hover:text-[#f75a05] md:text-[1.7rem] md:tracking-[-0.035em]">
+            {title}
+          </h3>
 
-        <p className="mt-4 text-[1.09rem] leading-[1.6] text-black/80 md:text-[1.1rem]">
-          {description}
-        </p>
+          <p className="mt-4 text-[1.09rem] leading-[1.6] text-black/80 md:text-[1.1rem]">
+            {description}
+          </p>
 
-        {href ? (
-          <Link
-            to={href}
-            className="mt-5 block w-fit mx-auto text-[1.05rem] font-bold text-[#f75a05] underline-offset-4 transition duration-200 hover:underline md:text-[1.1rem]"
-          >
-            {linkLabel}
-          </Link>
-        ) : (
-          <div className="mt-5 h-6" aria-hidden="true" />
-        )}
+          {href ? (
+            <Link
+              to={href}
+              className="mt-auto mx-auto flex min-h-[58px] w-full max-w-[240px] items-center justify-center border border-[black] bg-black px-6 py-3 text-center text-[1.05rem] font-bold text-[white] transition duration-200  md:mt-8 md:text-[1.1rem]"
+            >
+              {linkLabel}
+            </Link>
+          ) : (
+            <div className="mt-auto h-[58px] md:mt-8" aria-hidden="true" />
+          )}
+        </div>
       </div>
     </article>
   );

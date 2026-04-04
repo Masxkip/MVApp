@@ -1,6 +1,4 @@
-// ================================
 // File: src/components/sections/ServiceSection.jsx
-// ================================
 import movingServices from "../../data/movingServices";
 import MovingServiceCard from "./MovingServiceCard";
 
@@ -15,16 +13,16 @@ export default function ServiceSection({ ids, title, subtitle, variant = "light"
           {(title || subtitle) && (
             <header>
               {title ? (
-                <h1 className="text-[2.03rem] font-extrabold leading-[1.05] text-[black] md:text-[3.3rem]">
-                  Keep <span className="text-[#f75a05]">moving forward with </span><span className="text-[black]">
-                    our complete</span> 
+                <h1 className="text-[2.03rem] font-extrabold leading-[1.05] text-black md:text-[3.3rem]">
+                  Keep <span className="text-[#f75a05]">moving forward with </span>
+                  <span className="text-black">our complete</span>
                   <span className="block"> moving services</span>
                 </h1>
               ) : null}
 
               {subtitle ? (
                 <p
-                  className={`mt-4 text-[1.09rem] leading-[1.6] font-semibold md:text-[1.6rem] ${
+                  className={`mt-4 text-[1.09rem] font-semibold leading-[1.6] md:text-[1.6rem] ${
                     isDark ? "text-black/80" : "text-black/80"
                   }`}
                 >
@@ -35,12 +33,8 @@ export default function ServiceSection({ ids, title, subtitle, variant = "light"
           )}
 
           <div className="mt-10 grid grid-cols-1 gap-y-4 md:mt-14 md:grid-cols-2 md:gap-x-10 md:gap-y-10 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10">
-            {selected.map((service, idx) => (
-              <MovingServiceCard
-                key={service.id}
-                service={service}
-                defaultOpen={idx === 0}
-              />
+            {selected.map((service) => (
+              <MovingServiceCard key={service.id} service={service} />
             ))}
           </div>
         </div>
